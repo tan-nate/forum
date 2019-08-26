@@ -3,6 +3,7 @@ class Quote < ApplicationRecord
     # t.integer :fact_rating
     # t.integer :relevant_rating
     # t.integer :user_id
+    # add_column :quotes, :source_url, :string
 
     has_many :supported_users, foreign_key: :supporter_id, class_name: 'Support'
     has_many :supportees, through: :supported_users
