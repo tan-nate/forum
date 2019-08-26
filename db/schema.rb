@@ -10,10 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_26_204733) do
+ActiveRecord::Schema.define(version: 2019_08_26_212606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "opposes", force: :cascade do |t|
+    t.integer "opposer_id"
+    t.integer "opposee_id"
+  end
 
   create_table "places", force: :cascade do |t|
     t.string "name"
@@ -25,11 +30,14 @@ ActiveRecord::Schema.define(version: 2019_08_26_204733) do
     t.string "text"
     t.integer "fact_rating"
     t.integer "relevant_rating"
-    t.integer "supporting_id"
-    t.integer "opposing_id"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "supports", force: :cascade do |t|
+    t.integer "supporter_id"
+    t.integer "supportee_id"
   end
 
   create_table "topics", force: :cascade do |t|
