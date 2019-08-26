@@ -6,4 +6,5 @@ class Quote < ApplicationRecord
     # t.integer :opposing_id
     # t.integer :user_id
 
+    
 end
