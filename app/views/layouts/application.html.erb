@@ -12,14 +12,17 @@
   <body>
     <header>
       <div class="nav">
-        <%= link_to "topics", topics_path %> / <%= link_to "places", places_path %> / <%= link_to "users", users_path %>
-      </div>
-      <div class="session">
-        <% if logged_in? %>
-          <%= link_to "log out", '/logout' %>
-        <% else %>
-          <%= link_to "log in", '/login' %> / <%= link_to "sign up", '/signup' %>
-        <% end %>
+        <ul>
+          <li><%= link_to "topics", topics_path %>
+          <li><%= link_to "places", places_path %>
+          <li><%= link_to "users", users_path %>
+          <% if logged_in? %>
+            <li class="float_right"><%= link_to "log out", '/logout' %>
+          <% else %>
+            <li class="float_right"><%= link_to "log in", '/login' %>
+            <li class="float_right"><%= link_to "sign up", '/signup' %>
+          <% end %>
+        </ul>
       </div>
     </header>
     <%= yield %>
