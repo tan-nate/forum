@@ -8,7 +8,7 @@ class UsersController < ApplicationController
             redirect_to '/signup'
         end
         User.create(user_params)
-        redirect_to root
+        redirect_to root_path
     end
 
     private
