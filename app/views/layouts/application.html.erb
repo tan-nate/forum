@@ -10,6 +10,17 @@
   </head>
 
   <body>
+    <header>
+      <div class="nav">
+        <%= link_to "topics", topics_path %> / <%= link_to "places", places_path %> / <%= link_to "users", users_path %>
+      </div>
+      <div class="session">
+        <% if logged_in? %>
+          <%= link_to "log out", '/logout' %>
+        <% else %>
+          <%= link_to "log in", '/login' %> / <%= link_to "sign up", '/signup' %>
+        <% end %>
+      </div>
     <%= yield %>
   </body>
 </html>
