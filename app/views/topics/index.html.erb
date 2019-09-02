@@ -1,0 +1,10 @@
+<% @topics.each do |topic| %>
+    <h2><%= topic.name %></h2>
+    <div class="row">
+    <% topic.quotes.each do |quote| %>
+        <div class="column">
+            <p><%= quote.text %></p>
+            <%= link_to "source", quote.source_url, class: "source" %>
+        </div>
+    <% end %>
+<% end %>

@@ -1,3 +1,18 @@
 // Place all the styles related to the Topics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.column {
+    display: inline-block;
+    width: 20%;
+    vertical-align: top;
+    text-align: left;
+    padding: 1em 1em 0 0;
+}
+.row {
+    margin: 0 auto;
+    text-align: center;
+}
+h2 {
+    text-align: center;
+}
