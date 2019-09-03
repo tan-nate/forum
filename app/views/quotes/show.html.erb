@@ -1,2 +1,31 @@
-<h3 class="quote_text"><%= @quote.text %></h3>
-<p class="source_link"> - <%= link_to "source", @quote.source_url %></p>
+<div class="quote_show">
+    <h3 class="quote_text"><%= @quote.text %></h3>
+    <p class="source_link"> - <%= link_to "source", @quote.source_url %></p>
+</div>
+<br>
+<div class="row">
+    <div class="for_column">
+        <div class="title">
+            <h4>supporting quotes:</h4>
+        </div>
+        <div class="for_quote">
+            <% @quote.supporters.each do |quote| %>
+                <p><%= quote.text %></p>
+                <%= link_to "source", quote.source_url, class: "source" %>
+                <%= link_to "see quote", quote_path(quote), class: "see_quote" %>
+            <% end %>
+        </div>
+    </div>
+    <div class="against_column">
+        <div class="title">
+            <h4>opposing quotes:</h4>
+        </div>
+        <div class="against_quote">
+            <% @quote.opposers.each do |quote| %>
+                <p><%= quote.text %></p>
+                <%= link_to "source", quote.source_url, class: "source" %>
+                <%= link_to "see quote", quote_path(quote), class: "see_quote" %>
+            <% end %>
+        </div>
+    </div>
+</div>

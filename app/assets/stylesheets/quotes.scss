@@ -2,11 +2,49 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+div.quote_show {
+    margin: 1em;
+}
 h3.quote_text {
-    margin: 1em auto;
+    margin: 1em auto 1em;
     width: 60%;
 }
 p.source_link {
+    margin: -1em 0 0 0;
+    text-align: right;
+    width: 75%;
+}
+div.for_column {
+    width: 30%;
+    float: left;
+    margin: 0 0 0 15%;
+}
+.for_quote {
+    width: 100%;
+    vertical-align: top;
+    text-align: left;
+    padding: 1em;
+    border-width: 2px;
+    border-style: solid;
+}
+div.for_column div.title {
+    text-align: left;
+}
+
+div.against_column {
+    width: 30%;
     float: right;
-    width: 30%
+    margin: 0 18% 0 0;
+}
+.against_quote {
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    text-align: left;
+    padding: 1em;
+    border-width: 2px;
+    border-style: solid;
+}
+div.against_column div.title {
+    text-align: left;
 }
