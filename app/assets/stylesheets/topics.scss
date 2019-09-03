@@ -7,12 +7,17 @@
     width: 20%;
     vertical-align: top;
     text-align: left;
-    padding: 1em 1em 0 0;
+    padding: 1em;
+    border-width: 2px;
+    border-style: solid;
 }
 .row {
     margin: 0 auto;
     text-align: center;
 }
 h2 {
-    text-align: center;
+    text-indent: 17%;
+}
+a.see_quote {
+    float: right;
 }

@@ -1,3 +1,12 @@
 // Place all the styles related to the Quotes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h3.quote_text {
+    margin: 1em auto;
+    width: 60%;
+}
+p.source_link {
+    float: right;
+    width: 30%
+}
