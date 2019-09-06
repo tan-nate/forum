@@ -2,10 +2,12 @@ Rails.application.routes.draw do
   resources :places
   resources :quotes
   resources :users
-  resources :topics
+  resources :topics do
+    resources :quotes
+  end
   resources :sessions
 
-  root to: 'topics#index'
+  root 'topics#index'
 
   get '/signup' => 'users#new'
   get '/login' => 'sessions#new'
