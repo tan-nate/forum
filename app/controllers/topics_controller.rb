@@ -3,4 +3,8 @@ class TopicsController < ApplicationController
         @topics = Topic.all
     end
 
+    def show
+        @topic = Topic.find(params[:id])
+    end
+
 end
