@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   resources :places
-  resources :quotes
   resources :users
-  resources :topics
+  resources :topics do
+    resources :quotes
+  end
+  resources :quotes
   resources :sessions
 
   root 'topics#index'
