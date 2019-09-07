@@ -5,4 +5,5 @@ class User < ApplicationRecord
     has_many :topics, through: :user_topics
     has_many :user_places
     has_many :places, through: :user_places
+    has_many :quotes
 end
