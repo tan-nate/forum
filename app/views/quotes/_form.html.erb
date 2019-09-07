@@ -1,0 +1,3 @@
+<%= form_with model: @quote, class: "new_quote" do |f| %>
+    <%= f.collection_select(:topic_id, Topic.all, :id, :name, multiple: true, prompt: 'select topic') %>
+<% end %>
