@@ -1,8 +1,6 @@
 <h2><%= @topic.name %></h2>
-<div class="row">
 <%= link_to "new quote", new_topic_quote_path(@topic), class: "new_quote" %>
-<br>
-<br>
+<div class="row">
 <% @topic.quotes.each do |quote| %>
     <div class="column">
         <p><%= quote.text %></p>
