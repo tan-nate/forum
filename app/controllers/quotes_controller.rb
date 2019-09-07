@@ -9,4 +9,13 @@ class QuotesController < ApplicationController
             @quotes = Quote.all
         end
     end
+    def new
+        @quote = Quote.new(topic_id: params[:topic_id])
+    end
+
+    private
+
+    def quote_params
+        params.require(:quote).permit(:topic_id)
+    end
 end
