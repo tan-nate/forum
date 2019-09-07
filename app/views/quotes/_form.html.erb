@@ -1,6 +1,7 @@
 <%= form_with model: @quote, class: "new_quote" do |f| %>
-    <%= f.hidden_field_tag 'user_id', '#{current_user.id}'  %>
-    
-    <%= f.text_area :text %>
-    <%= f.text_field :source_url %>
+    <%= hidden_field_tag 'user_id', '#{current_user.id}'  %>
+    <%= f.text_field :topic %><br>
+    <%= f.text_area :text %><br>
+    <%= f.text_field :source_url %><br>
+    <%= f.submit %>
 <% end %>

@@ -10,6 +10,5 @@ class Quote < ApplicationRecord
     has_many :opposers, through: :opposing_users
 
     belongs_to :user
-    has_many :quote_topics
-    has_many :topics, through: :quote_topics
+    belongs_to :topic
 end
