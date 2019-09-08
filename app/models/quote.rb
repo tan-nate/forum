@@ -11,4 +11,6 @@ class Quote < ApplicationRecord
 
     belongs_to :user
     belongs_to :topic
+
+    validates :text, length: {in: 200..1000}
 end
