@@ -12,5 +12,7 @@ class Quote < ApplicationRecord
     belongs_to :user
     belongs_to :topic
 
+    has_many :clipboards
+
     validates :text, length: {in: 200..1000}
 end

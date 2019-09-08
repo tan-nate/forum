@@ -6,4 +6,7 @@ class User < ApplicationRecord
     has_many :user_places
     has_many :places, through: :user_places
     has_many :quotes
+
+    has_one :clipboard
+    has_many :quotes, through: clipboard
 end
