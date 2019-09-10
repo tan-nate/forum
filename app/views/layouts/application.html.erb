@@ -16,7 +16,7 @@
         <ul>
           <li><%= link_to "topics", topics_path %>
           <li><%= link_to "places", places_path %>
-          <li><%= link_to "users", users_path %>
+          <li><%= link_to "clipboard", clipboard_path(current_user) %>
           <% if logged_in? %>
             <li class="float_right"><%= link_to "log out", '/logout' %>
           <% else %>

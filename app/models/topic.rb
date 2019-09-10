@@ -4,7 +4,7 @@ class Topic < ApplicationRecord
     has_many :users, through: :user_topics
     belongs_to :place
 
-    def first_6_quotes
-        self.quotes.limit(6).to_a
+    def first_3_quotes
+        self.quotes.limit(3).to_a
     end
 end
