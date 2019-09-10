@@ -11,6 +11,11 @@ class UsersController < ApplicationController
         redirect_to root_path
     end
 
+    def clipboard
+        user = User.find(params[:id])
+        @clipboard = user.clipboard
+    end
+
     private
 
     def user_params

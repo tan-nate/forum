@@ -3,6 +3,7 @@
 <div class="quote_show">
     <h3 class="quote_text"><%= @quote.text %></h3>
     <p class="source_link"> - <%= link_to "source", @quote.source_url %></p>
+    <p class="source_link"> - <%= link_to "add to clipboard", add_quote_path(@quote) %></p>
 </div>
 <br>
 <div class="quote_row">
