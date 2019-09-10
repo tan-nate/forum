@@ -24,6 +24,17 @@ class QuotesController < ApplicationController
         @clipboard = current_user.clipboard
     end
 
+    def post_link
+        @quote = Quote.find(params[:id])
+        new_quote = Quote.create(user: current_user, topic: @quote.topic, text: params[:text], source_url: params[:source_url])
+        if params[:type] == "support"
+            @quote.supporters << new_quote
+        elsif params[:type] == "oppose"
+            @quote.opposers << new_quote
+        end
+        redirect_to quote_path(@quote)
+    end
+
     # private
 
     def quote_params

@@ -2,9 +2,9 @@
     <h3 class="quote_text"><%= @quote.text %></h3>
     <p class="source_link"> - <%= link_to "source", @quote.source_url %></p>
 </div>
-<button class="collapsible">link a new quote</button>
-<div class="content">
+<div class="link_new_quote_form">
     <%= form_with url: post_link_quote_path(@quote), class: "new_quote" do |f| %>
+        <%= label_tag " link a new quote:" %><br><br>
         <%= radio_button_tag :type, "support" %>
         <%= label_tag :type_support, "support" %><br>
         <%= radio_button_tag :type, "oppose" %>

@@ -11,24 +11,24 @@
         <div class="title">
             <h4>supporting quotes:</h4>
         </div>
-        <div class="for_quote">
-            <% @quote.supporters.each do |quote| %>
+        <% @quote.supporters.each do |quote| %>
+            <div class="for_quote">
                 <p><%= quote.text %></p>
                 <%= link_to "source", quote.source_url, class: "source" %>
                 <%= link_to "see quote", quote_path(quote), class: "see_quote" %>
-            <% end %>
-        </div>
+            </div>
+        <% end %>
     </div>
     <div class="against_column">
         <div class="title">
             <h4>opposing quotes:</h4>
         </div>
-        <div class="against_quote">
-            <% @quote.opposers.each do |quote| %>
+        <% @quote.opposers.each do |quote| %>
+            <div class="against_quote">
                 <p><%= quote.text %></p>
                 <%= link_to "source", quote.source_url, class: "source" %>
                 <%= link_to "see quote", quote_path(quote), class: "see_quote" %>
-            <% end %>
-        </div>
+            </div>
+        <% end %>
     </div>
 </div>
