@@ -19,6 +19,11 @@ class QuotesController < ApplicationController
         redirect_to clipboard_path(current_user)
     end
 
+    def link
+        @quote = Quote.find(params[:id])
+        @clipboard = current_user.clipboard
+    end
+
     # private
 
     def quote_params

@@ -1,0 +1,17 @@
+<div class="quote_show">
+    <h3 class="quote_text"><%= @quote.text %></h3>
+    <p class="source_link"> - <%= link_to "source", @quote.source_url %></p>
+</div>
+<button class="collapsible">link a new quote</button>
+<div class="content">
+    <%= form_with url: post_link_quote_path(@quote), class: "new_quote" do |f| %>
+        <%= radio_button_tag :type, "support" %>
+        <%= label_tag :type_support, "support" %><br>
+        <%= radio_button_tag :type, "oppose" %>
+        <%= label_tag :type_oppose, "oppose" %><br><br>
+        <%= f.hidden_field :topic_id  %>
+        <%= f.text_area :text, placeholder: "quote text:" %><br>
+        <%= f.text_field :source_url, placeholder: "source url:" %><br>
+        <%= f.submit "link quote" %>
+    <% end %>
+</div>
