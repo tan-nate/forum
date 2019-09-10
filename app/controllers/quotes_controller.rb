@@ -16,6 +16,7 @@ class QuotesController < ApplicationController
     def add
         @quote = Quote.find(paramas[:id])
         current_user.clipboard.quotes << @quote
+        redirect_to clipboard_path(current_user)
     end
 
     # private

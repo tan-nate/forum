@@ -1,0 +1,8 @@
+<div class="row">
+<% @clipboard.quotes.each do |quote| %>
+    <div class="column">
+        <p><%= quote.text %></p>
+        <%= link_to "source", quote.source_url, class: "source" %>
+        <%= link_to "see quote", quote_path(quote), class: "see_quote" %>
+    </div>
+<% end %>
