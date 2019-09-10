@@ -30,3 +30,5 @@ border_crisis_quote.opposers << border_crisis_quote_against
 
 # CLIPBOARD ACTION
 
+nates_clipboard = Clipboard.create(user: natedogg)
+nates_clipboard.quotes << border_crisis_quote_against
