@@ -8,5 +8,4 @@ class User < ApplicationRecord
     has_many :quotes
 
     has_one :clipboard
-    has_many :quotes, through: :clipboard
 end

@@ -1,4 +1,5 @@
 class Clipboard < ApplicationRecord
     belongs_to :user
-    belongs_to :quote
+    has_many :clipboard_quotes
+    has_many :quotes, through: :clipboard_quotes
 end
