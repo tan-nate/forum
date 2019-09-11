@@ -1,7 +1,11 @@
 class QuotesController < ApplicationController
+    before_action :require_login, only: [:new, :create, :add, :link, :post_link]
+    
     def show
         @quote = Quote.find(params[:id])
-        @clipboard = current_user.clipboard
+        if current_user
+            @clipboard = current_user.clipboard
+        end
     end
 
     def new

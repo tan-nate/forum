@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+    before_action :require_login, only: [:clipboard]
+    
     def new
     end
 
@@ -7,7 +9,7 @@ class UsersController < ApplicationController
             flash[:alert] = "username is taken"
             redirect_to '/signup'
         end
-        User.create(user_params)
+        User.create(user_params, clipboard: Clipboard.create)
         redirect_to root_path
     end
 
@@ -19,6 +21,6 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:username, :password, :password_confirmation)
+        params.require(:user).permit(:username, :password)
     end
 end
