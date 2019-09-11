@@ -1,0 +1,6 @@
+<%= form_with model: @quote, class: "new_quote" do |f| %>
+    <%= f.text_field :topic, placeholder: "topic:" %><br>
+    <%= f.text_area :text, placeholder: "quote text:" %><br>
+    <%= f.text_field :source_url, placeholder: "source url:" %><br>
+    <%= f.submit "create quote" %>
+<% end %>

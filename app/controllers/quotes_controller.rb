@@ -9,7 +9,11 @@ class QuotesController < ApplicationController
     end
 
     def new
-        @quote = Quote.new(topic_id: params[:topic_id])
+        if params[:topic_id]
+            @quote = Quote.new(topic_id: params[:topic_id])
+        else
+            @quote = Quote.new
+        end
     end
 
     def create

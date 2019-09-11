@@ -1,4 +1,7 @@
 <% @topics.each do |topic| %>
+    <div class="new_quote">
+        <%= link_to "new quote", new_quote_path, class: "new_quote" %>
+    </div>
     <h2><%= link_to topic.name, topic_path(topic) %></h2>
     <div class="row">
     <% topic.first_3_quotes.each do |quote| %>
