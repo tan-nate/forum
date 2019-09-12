@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/quotes/:id/add', to: 'quotes#add', as: 'add_quote'
   get '/quotes/:id/link', to: 'quotes#link', as: 'link_quote'
   post '/quotes/:id/link', to: 'quotes#post_link', as: 'post_link_quote'
+  post '/quotes/:id/link_clipboard', to: 'quotes#post_link_clipboard', as: 'post_link_clipboard'
 
   get '/users/:id/clipboard', to: 'users#clipboard', as: 'clipboard'
 

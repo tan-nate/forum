@@ -47,6 +47,17 @@ class QuotesController < ApplicationController
         redirect_to quote_path(@quote)
     end
 
+    def post_link_clipboard
+        @quote = Quote.find(params[:id])
+        linked_quote = Quote.find(params[:linked_quote_id])
+        if params[:type] == "support"
+            @quote.supporters << linked_quote
+        elsif params[:type] == "oppose"
+            @quote.opposers << linked_quote
+        end
+        redirect_to quote_path(@quote)
+    end
+
     # private
 
     def quote_params

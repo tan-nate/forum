@@ -54,7 +54,14 @@ div.against_column div.title {
     text-align: center;
     padding: 1.2em;
 }
+#link_new_quote_instructions {
+    font-weight: bold;
+}
 p.clipboard_instructions {
     text-align: center;
-    font-size: 1.2em;
+    font-size: 20px;
+    font-weight: bold;
+}
+p.empty_clipboard {
+    text-align: center;
 }
