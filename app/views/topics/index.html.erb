@@ -1,5 +1,5 @@
+<%= link_to "new quote", new_quote_path, class: "new_quote" %>
 <% @topics.each do |topic| %>
-    <%= link_to "new quote", new_quote_path, class: "new_quote" %>
     <h2><%= link_to topic.name, topic_path(topic) %></h2>
     <div class="row">
     <% topic.first_3_quotes.each do |quote| %>
@@ -9,4 +9,5 @@
             <%= link_to "see quote", quote_path(quote), class: "see_quote" %>
         </div>
     <% end %>
+    </div>
 <% end %>

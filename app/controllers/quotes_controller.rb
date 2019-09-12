@@ -11,13 +11,17 @@ class QuotesController < ApplicationController
     def new
         if params[:topic_id]
             @quote = Quote.new(topic_id: params[:topic_id])
-        else
-            @quote = Quote.new
         end
     end
 
     def create
-        @quote = current_user.quotes.create(quote_params)
+        if params[:topic_id]
+            @quote = current_user.quotes.create(quote_params)
+        else
+            topic = Topic.find_or_create_by(name: params[:topic_name], place_id: params[:topic_place_id])
+            @quote = current_user.quotes.create(text: params[:text], source_url: params[:source_url])
+            @quote.update(topic: topic)
+        end
         redirect_to quote_path(@quote)
     end
 
@@ -46,6 +50,6 @@ class QuotesController < ApplicationController
     # private
 
     def quote_params
-        params.require(:quote).permit(:text, :source_url, :topic_id)
+        params.require(:quote).permit(:text, :source_url, :topic_id, topics_attributes: [:name, :place_id])
     end
 end

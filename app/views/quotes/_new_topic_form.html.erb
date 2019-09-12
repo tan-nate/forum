@@ -1,5 +1,6 @@
-<%= form_with model: @quote, class: "new_quote" do |f| %>
-    <%= f.text_field :topic, placeholder: "topic:", style: "margin: 1.1em" %><br>
+<%= form_with url: quotes_path, class: "new_quote" do |f| %>
+    <%= f.text_field :topic_name, placeholder: "topic:", style: "margin: 1.1em" %>
+    <%= f.collection_select :topic_place_id, Place.all, :id, :name %><br>
     <%= f.text_area :text, placeholder: "quote text:" %><br>
     <%= f.text_field :source_url, placeholder: "source url:" %><br>
     <%= f.submit "create quote" %>
