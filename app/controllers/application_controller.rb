@@ -9,6 +9,11 @@ class ApplicationController < ActionController::Base
         !!current_user
     end
 
+    def namify(topic_name)
+        name_arr = topic_name.split.collect! {|word| word.capitalize}
+        new_name = name_arr.join
+    end
+
     private
 
     def require_login

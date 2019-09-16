@@ -7,9 +7,4 @@ class Topic < ApplicationRecord
     def first_3_quotes
         self.quotes.limit(3).to_a
     end
-
-    def namify
-        name_arr = name.split.collect! {|word| word.capitalize}
-        new_name = name_arr.join
-    end
 end
