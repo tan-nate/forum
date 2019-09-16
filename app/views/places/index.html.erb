@@ -1,0 +1,9 @@
+<% @places.each do |place| %>
+    <h2><%= link_to place.name, place_path(place) %></h2>
+    <ul class="place_topics">
+        <% place.first_3_topics.each do |topic| %>
+            <li><%= link_to topic.name, topic_path(topic) %></li>
+        <% end %>
+        <li> . . . </li>
+    </ul>
+<% end %>
