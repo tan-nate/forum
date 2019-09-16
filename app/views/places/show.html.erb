@@ -16,6 +16,8 @@
             <p><%= quote.text %></p>
             <%= link_to "source", quote.source_url, class: "source" %>
             <%= link_to "see quote", quote_path(quote), class: "see_quote" %>
+            <p class="support_count">supporting: <%= quote.support_count %></p>
+            <p class="support_count">opposing: <%= quote.oppose_count %></p>
         </div>
     <% end %>
     </div>
