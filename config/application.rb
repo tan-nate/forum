@@ -31,5 +31,7 @@ module Forum
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
   end
+  config.exceptions_app = self.routes
 end

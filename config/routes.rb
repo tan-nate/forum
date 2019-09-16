@@ -13,12 +13,15 @@ Rails.application.routes.draw do
   post '/quotes/:id/link_clipboard', to: 'quotes#post_link_clipboard', as: 'post_link_clipboard'
 
   get '/users/:id/clipboard', to: 'users#clipboard', as: 'clipboard'
+  delete '/users/:id/clipboard', to: 'users#clear_clipboard', as: 'clear_clipboard'
 
   root 'topics#index'
 
   get '/signup', to: 'users#new'
   get '/login', to: 'sessions#new'
   get '/logout', to: 'sessions#delete'
+
+  get '/forbidden', to: 'errors#forbidden', as: 'forbidden'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

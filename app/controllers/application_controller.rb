@@ -12,6 +12,6 @@ class ApplicationController < ActionController::Base
     private
 
     def require_login
-        return head(:forbidden) unless session.include? :user_id
+        redirect_to forbidden_path unless session.include? :user_id
     end
 end

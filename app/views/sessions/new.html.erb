@@ -1,3 +1,6 @@
+<% if flash[:alert] %>
+    <div class="alert"><%= flash[:alert] %></div>
+<% end %>
 <div class="login_container">
     <div class="login">
         <%= form_for :user, url: '/sessions' do |f| %>

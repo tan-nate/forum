@@ -8,14 +8,23 @@ class UsersController < ApplicationController
         if User.find_by(username: user_params[:username])
             flash[:alert] = "username is taken"
             redirect_to '/signup'
+        else
+            user = User.create(user_params)
+            user.update(clipboard: Clipboard.create)
+            redirect_to root_path
         end
-        User.create(user_params, clipboard: Clipboard.create)
-        redirect_to root_path
     end
 
     def clipboard
         user = User.find(params[:id])
         @clipboard = user.clipboard
+    end
+
+    def clear_clipboard
+        user = User.find(params[:id])
+        @clipboard = user.clipboard
+        @clipboard.quotes.clear
+        redirect_to clipboard_path(user)
     end
 
     private

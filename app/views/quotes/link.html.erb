@@ -19,7 +19,7 @@
     <p class="empty_clipboard"> the clipboard is empty. </p>
 <% end %>
 <div class="row">
-<% @clipboard.quotes.each do |quote| %>
+<% @clipboard.clipboard_topic_quotes(@quote.topic).each do |quote| %>
     <div class="column">
         <p><%= quote.text %></p>
         <%= form_with url: post_link_clipboard_path(@quote), class: "clipboard_link_form" do |f| %>

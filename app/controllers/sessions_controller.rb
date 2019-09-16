@@ -5,11 +5,11 @@ class SessionsController < ApplicationController
     def create
         @user = User.find_by(username: params[:user][:username])
         if @user
-            return head(:forbidden) unless @user.authenticate(params[:user][:password])
             session[:user_id] = @user.id
             redirect_to root_path
         else
-            return head(:forbidden)
+            flash[:alert] = "check your username and password"
+            redirect_to '/login'
         end
     end
 

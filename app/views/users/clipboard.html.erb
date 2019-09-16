@@ -1,4 +1,9 @@
 <h2 class="clipboard_title">clipboard</h2>
+<div class="clear_clipboard">
+    <%= form_with url: clear_clipboard_path(current_user), method: 'delete' do %>
+        <%= submit_tag("clear clipboard") %>
+    <% end %>
+</div>
 <% @clipboard.clipboard_topics.each do |topic| %>
     <h2><%= topic.name %></h2>
     <div class="row">
