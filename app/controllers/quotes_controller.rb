@@ -18,9 +18,11 @@ class QuotesController < ApplicationController
         if params[:topic_id]
             @quote = current_user.quotes.create(quote_params)
         else
-            topic = Topic.find_or_create_by(name: params[:topic_name], place_id: params[:topic_place_id])
+            topic = params[:topic_name]
+            namified_topic = topic.namify
+            stored_topic = Topic.find_or_create_by(name: namified_topic, place_id: params[:topic_place_id])
             @quote = current_user.quotes.create(text: params[:text], source_url: params[:source_url])
-            @quote.update(topic: topic)
+            @quote.update(topic: stored_topic)
         end
         redirect_to quote_path(@quote)
     end
