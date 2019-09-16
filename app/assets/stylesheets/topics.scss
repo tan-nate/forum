@@ -8,7 +8,7 @@
     display: block;
 }
 .column {
-    flex-basis: 28%;
+    flex-basis: 25%;
     vertical-align: top;
     padding: 1em;
     border-width: 2px;
@@ -16,10 +16,10 @@
     margin: 5px;
 }
 .row {
-    margin: 0 auto;
+    margin: 0 auto 0 15%;
     display: flex;
     flex-wrap: wrap;
-    width: 70%;
+    width: 80%;
 }
 .box>* {
     flex: 1 1 160px;
@@ -29,4 +29,7 @@ h2 {
 }
 a.see_quote {
     float: right;
+}
+a.see_more {
+    margin-left: 17%;
 }

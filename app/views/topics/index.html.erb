@@ -10,4 +10,9 @@
         </div>
     <% end %>
     </div>
+    <% if topic.quotes.length > 3 %>
+        <br>
+        <%= link_to "see more...", topic_path(topic), class: "see_more" %>
+    <% end %>
+    <br><br>
 <% end %>

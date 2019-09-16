@@ -1,0 +1,18 @@
+<h2 class="clipboard_title"><%= @place.name %></h2>
+<% @place.topics.each do |topic| %>
+    <h2><%= link_to topic.name, topic_path(topic) %></h2>
+    <div class="row">
+    <% topic.first_3_quotes.each do |quote| %>
+        <div class="column">
+            <p><%= quote.text %></p>
+            <%= link_to "source", quote.source_url, class: "source" %>
+            <%= link_to "see quote", quote_path(quote), class: "see_quote" %>
+        </div>
+    <% end %>
+    </div>
+    <% if topic.quotes.length > 3 %>
+        <br>
+        <%= link_to "see more...", topic_path(topic), class: "see_more" %>
+    <% end %>
+    <br><br>
+<% end %>
