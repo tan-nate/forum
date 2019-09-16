@@ -1,6 +1,16 @@
 <%= link_to "new quote", new_quote_path, class: "new_quote" %>
 <% @topics.each do |topic| %>
-    <h2><%= link_to topic.name, topic_path(topic) %></h2>
+    <h2 class="place_title"><%= link_to topic.name, topic_path(topic) %></h2>
+    <% if !current_user.topics.include?(topic) %>
+        <%= form_with url: follow_topic_path(topic), class: "follow" do %>
+            <%= submit_tag("follow") %>
+        <% end %>
+    <% else %>
+        <%= form_with url: unfollow_topic_path(topic), class: "follow" do %>
+            <%= submit_tag("unfollow") %>
+        <% end %>
+    <% end %>
+    <br><br>
     <div class="row">
     <% topic.first_3_quotes.each do |quote| %>
         <div class="column">

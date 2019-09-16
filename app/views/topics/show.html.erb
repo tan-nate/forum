@@ -1,4 +1,13 @@
 <h2 class="clipboard_title"><%= @topic.name %></h2>
+<% if !current_user.topics.include?(@topic) %>
+    <%= form_with url: follow_topic_path(@topic), class: "show_follow" do %>
+        <%= submit_tag("follow") %>
+    <% end %>
+<% else %>
+    <%= form_with url: unfollow_topic_path(@topic), class: "show_follow" do %>
+        <%= submit_tag("unfollow") %>
+    <% end %>
+<% end %>
 <%= link_to "new quote", new_topic_quote_path(@topic), class: "new_quote" %>
 <div class="row">
 <% @topic.quotes.each do |quote| %>
