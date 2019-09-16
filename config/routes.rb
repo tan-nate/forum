@@ -7,15 +7,18 @@ Rails.application.routes.draw do
   resources :quotes
   resources :sessions
 
+  root 'topics#index'
+  
   get '/quotes/:id/add', to: 'quotes#add', as: 'add_quote'
   get '/quotes/:id/link', to: 'quotes#link', as: 'link_quote'
   post '/quotes/:id/link', to: 'quotes#post_link', as: 'post_link_quote'
   post '/quotes/:id/link_clipboard', to: 'quotes#post_link_clipboard', as: 'post_link_clipboard'
 
+  post '/places/:id/follow', to: 'places#follow', as: 'follow_place'
+  post '/places/:id/unfollow', to: 'places#unfollow', as: 'unfollow_place'
+
   get '/users/:id/clipboard', to: 'users#clipboard', as: 'clipboard'
   delete '/users/:id/clipboard', to: 'users#clear_clipboard', as: 'clear_clipboard'
-
-  root 'topics#index'
 
   get '/signup', to: 'users#new'
   get '/login', to: 'sessions#new'

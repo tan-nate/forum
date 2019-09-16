@@ -47,6 +47,7 @@
   header div.nav li p {
     font-weight: bold;
     color: rgb(124, 240, 240);
+    padding-right: 1em;
   }
   
   /* Change the link color to #111 (black) on hover */

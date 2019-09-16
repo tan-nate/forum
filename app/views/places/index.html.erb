@@ -1,5 +1,15 @@
 <% @places.each do |place| %>
-    <h2><%= link_to place.name, place_path(place) %></h2>
+    <br>
+    <h2 class="place_title"><%= link_to place.name, place_path(place) %></h2>
+    <% if !current_user.places.include?(place) %>
+        <%= form_with url: follow_place_path(place), class: "follow" do %>
+            <%= submit_tag("follow") %>
+        <% end %>
+    <% else %>
+        <%= form_with url: unfollow_place_path(place), class: "follow" do %>
+            <%= submit_tag("unfollow") %>
+        <% end %>
+    <% end %>
     <ul class="place_topics">
         <% place.first_5_topics.each do |topic| %>
             <li><%= link_to topic.name, topic_path(topic) %></li>
