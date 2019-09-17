@@ -17,7 +17,7 @@ class QuotesController < ApplicationController
     end
 
     def create
-        if params[:topic_id]
+        if params[:quote][:topic_id]
             @quote = current_user.quotes.new(quote_params)
         else
             topic = params[:topic_name]
@@ -70,6 +70,6 @@ class QuotesController < ApplicationController
     # private
 
     def quote_params
-        params.require(:quote).permit(:text, :source_url, :topic_id, topics_attributes: [:name, :place_id])
+        params.require(:quote).permit(:text, :source_url, :topic_id)
     end
 end
