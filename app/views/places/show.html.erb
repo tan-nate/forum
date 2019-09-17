@@ -1,11 +1,13 @@
 <h2 class="clipboard_title"><%= @place.name %></h2>
-<% if !current_user.places.include?(@place) %>
-    <%= form_with url: follow_place_path(@place), class: "show_follow" do %>
-        <%= submit_tag("follow") %>
-    <% end %>
-<% else %>
-    <%= form_with url: unfollow_place_path(@place), class: "show_follow" do %>
-        <%= submit_tag("unfollow") %>
+<% if logged_in? %>
+    <% if !current_user.places.include?(@place) %>
+        <%= form_with url: follow_place_path(@place), class: "show_follow" do %>
+            <%= submit_tag("follow") %>
+        <% end %>
+    <% else %>
+        <%= form_with url: unfollow_place_path(@place), class: "show_follow" do %>
+            <%= submit_tag("unfollow") %>
+        <% end %>
     <% end %>
 <% end %>
 <% @place.topics.each do |topic| %>
