@@ -2,3 +2,10 @@ h2#forbidden {
     text-align: center;
     text-indent: 0px;
 }
+div#error_explanation {
+    width: 40%;
+    margin: 0 38%;
+}
+div.field_with_errors {
+    display: inline;
+}

@@ -1,3 +1,4 @@
+<div class="centered_clipboard_title">
 <h2 class="clipboard_title"><%= @topic.name %></h2>
 <% if logged_in? %>
     <% if !current_user.topics.include?(@topic) %>
@@ -10,6 +11,7 @@
         <% end %>
     <% end %>
 <% end %>
+</div>
 <%= link_to "new quote", new_topic_quote_path(@topic), class: "new_quote" %>
 <div class="row">
 <% @topic.quotes.each do |quote| %>
