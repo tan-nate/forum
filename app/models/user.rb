@@ -8,4 +8,8 @@ class User < ApplicationRecord
     has_many :quotes
 
     has_one :clipboard
+
+    validates :username, format: { with: /\A(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9.]+(?<![_.])\z/,
+        message: "is not a valid username. 8-20 characters: letters, numbers, and dots" }
+    validates :username, uniqueness: true
 end

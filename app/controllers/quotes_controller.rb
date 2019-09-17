@@ -11,6 +11,8 @@ class QuotesController < ApplicationController
     def new
         if params[:topic_id]
             @quote = Quote.new(topic_id: params[:topic_id])
+        else
+            @quote = Quote.new
         end
     end
 
