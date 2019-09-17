@@ -14,8 +14,10 @@
 <% end %>
 <% if params[:topic_id] %>
     <%= render 'form' %>
-<% elsif params[:quote][:topic_id] %>
+<% elsif params[:quote] %>
+  <% if params[:quote][:topic_id] %>
     <%= render 'form' %>
+  <% end %>
 <% else %>
-    <%= render 'new_topic_form' %>
+  <%= render 'new_topic_form' %>
 <% end %>

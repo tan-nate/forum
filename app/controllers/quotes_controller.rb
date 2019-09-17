@@ -17,8 +17,10 @@ class QuotesController < ApplicationController
     end
 
     def create
-        if params[:quote][:topic_id]
-            @quote = current_user.quotes.new(quote_params)
+        if params[:quote]
+            if params[:quote][:topic_id]
+                @quote = current_user.quotes.new(quote_params)
+            end
         else
             topic = params[:topic_name]
             namified_topic = namify(topic)
