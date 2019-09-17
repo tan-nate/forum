@@ -18,15 +18,20 @@ class QuotesController < ApplicationController
 
     def create
         if params[:topic_id]
-            @quote = current_user.quotes.create(quote_params)
+            @quote = current_user.quotes.new(quote_params)
         else
             topic = params[:topic_name]
             namified_topic = namify(topic)
-            stored_topic = Topic.find_or_create_by(name: namified_topic, place_id: params[:topic_place_id])
-            @quote = current_user.quotes.create(text: params[:text], source_url: params[:source_url])
-            @quote.update(topic: stored_topic)
+            stored_topic = Topic.find_or_initialize_by(name: namified_topic, place_id: params[:topic_place_id])
+            @quote = current_user.quotes.new(text: params[:text], source_url: params[:source_url])
+            @quote.assign_attributes(topic: stored_topic)
         end
-        redirect_to quote_path(@quote)
+        if @quote.valid?
+            @quote.save
+            redirect_to quote_path(@quote)
+        else
+            render :new
+        end
     end
 
     def add
