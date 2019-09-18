@@ -1,5 +1,6 @@
 <% @places.each do |place| %>
     <br>
+    <br>
     <h2 class="place_title"><%= link_to place.name, place_path(place) %></h2>
     <% if logged_in? %>
         <% if !current_user.places.include?(place) %>

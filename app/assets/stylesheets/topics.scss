@@ -6,6 +6,7 @@
     font-size: 20px;
     text-align: center;
     display: block;
+    margin: 1em;
 }
 .column {
     flex-basis: 25%;
@@ -35,4 +36,10 @@ a.see_more {
 }
 div.centered_clipboard_title {
     text-align: center;
+}
+a.new_quote_topic {
+    font-size: 20px;
+    text-align: center;
+    display: block;
+    margin: 0 1em 1em 1em;
 }
