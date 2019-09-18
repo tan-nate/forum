@@ -1,3 +1,22 @@
+<% if @quote.errors.any? || @topic.errors.any? %>
+  <div id="error_explanation">
+    <h4>
+      some errors prohibited this quote from being saved:
+    </h4>
+    <ul>
+    <% if @topic.errors.any? %>
+      <% @topic.errors.full_messages.each do |msg| %>
+        <li><%= msg.downcase %></li>
+      <% end %>
+    <% end %>
+    <% if @quote.errors.any? %>
+      <% @quote.errors.full_messages.each do |msg| %>
+        <li><%= msg.downcase %></li>
+      <% end %>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 <%= form_with url: quotes_path, class: "new_quote", local: true do |f| %>
     <%= f.text_field :topic_name, placeholder: "topic:", style: "margin: 1.1em" %>
     <%= f.collection_select :topic_place_id, Place.all, :id, :name %><br>

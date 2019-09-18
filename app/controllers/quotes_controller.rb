@@ -11,12 +11,15 @@ class QuotesController < ApplicationController
     def new
         if params[:topic_id]
             @quote = Quote.new(topic_id: params[:topic_id])
+            @topic = Topic.new
         else
             @quote = Quote.new
+            @topic = Topic.new
         end
     end
 
     def create
+        # binding.pry
         if params[:quote]
             if params[:quote][:topic_id]
                 @quote = current_user.quotes.new(quote_params)
@@ -24,15 +27,29 @@ class QuotesController < ApplicationController
         else
             topic = params[:topic_name]
             namified_topic = namify(topic)
-            stored_topic = Topic.find_or_initialize_by(name: namified_topic, place_id: params[:topic_place_id])
+            @topic = Topic.find_or_initialize_by(name: namified_topic, place_id: params[:topic_place_id])
             @quote = current_user.quotes.new(text: params[:text], source_url: params[:source_url])
-            @quote.assign_attributes(topic: stored_topic)
         end
-        if @quote.valid?
-            @quote.save
-            redirect_to quote_path(@quote)
+        if @topic
+            if @topic.valid?
+                @quote.topic = @topic
+                if @quote.valid?
+                    @topic.save
+                    @quote.save
+                    redirect_to quote_path(@quote)
+                else
+                    render :new
+                end
+            else
+                render :new
+            end
         else
-            render :new
+            if @quote.valid?
+                @quote.save
+                redirect_to quote_path(@quote)
+            else
+                render :new
+            end
         end
     end
 

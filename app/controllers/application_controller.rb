@@ -10,7 +10,13 @@ class ApplicationController < ActionController::Base
     end
 
     def namify(topic_name)
-        name_arr = topic_name.split.collect! {|word| word.capitalize}
+        name_arr = topic_name.split.collect! do |word| 
+            if word.downcase == word
+                word.capitalize
+            else
+                word
+            end
+        end
         new_name = name_arr.join
     end
 
