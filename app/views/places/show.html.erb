@@ -1,3 +1,4 @@
+<div class="centered_clipboard_title">
 <h2 class="clipboard_title"><%= @place.name %></h2>
 <% if logged_in? %>
     <% if !current_user.places.include?(@place) %>
@@ -10,8 +11,9 @@
         <% end %>
     <% end %>
 <% end %>
+</div>
 <% @place.topics.each do |topic| %>
-    <h2><%= link_to topic.name, topic_path(topic) %></h2>
+    <h2 class="place_topic_title"><%= link_to topic.name, topic_path(topic) %></h2>
     <div class="row">
     <% topic.first_3_quotes.each do |quote| %>
         <div class="column">

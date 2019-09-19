@@ -8,8 +8,10 @@
     <p class="source_link"> - <%= link_to "source", @quote.source_url %></p><br>
     <p class="source_link"> - <%= link_to "add to clipboard", add_quote_path(@quote) %></p><br>
     <p class="source_link"> - <%= link_to "link a quote", link_quote_path(@quote) %></p><br>
-    <%= form_with model: @quote, method: 'delete', class: "source_link" do |f| %>
-        <%= f.submit "delete quote" %>
+    <% if current_user == @quote.user %>
+        <%= form_with model: @quote, method: 'delete', class: "source_link" do |f| %>
+            <%= f.submit "delete quote" %>
+        <% end %>
     <% end %>
 </div>
 <div class="quote_row">

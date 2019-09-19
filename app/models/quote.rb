@@ -26,4 +26,8 @@ class Quote < ApplicationRecord
     def oppose_count
         opposers.length
     end
+
+    def sitename
+        URI.parse(source_url).host.match(/(?<=\.)(.*?)(?=\.)/)[0]
+    end
 end
