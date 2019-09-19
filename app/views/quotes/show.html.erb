@@ -5,7 +5,7 @@
 <% end %>
 <div class="quote_show">
     <h3 class="quote_text"><%= @quote.text %></h3>
-    <p class="source_link"> - <%= link_to "source", @quote.source_url %></p><br>
+    <p class="source_link"> - <%= link_to "source: #{@quote.sitename}", @quote.source_url %></p><br>
     <p class="source_link"> - <%= link_to "add to clipboard", add_quote_path(@quote) %></p><br>
     <p class="source_link"> - <%= link_to "link a quote", link_quote_path(@quote) %></p><br>
     <% if current_user == @quote.user %>
@@ -22,7 +22,7 @@
         <% @quote.supporters.each do |quote| %>
             <div class="for_quote">
                 <p><%= quote.text %></p>
-                <%= link_to "source", quote.source_url, class: "source" %>
+                <%= "source: #{quote.sitename}", quote.source_url, class: "source" %>
                 <%= link_to "see quote", quote_path(quote), class: "see_quote" %>
             </div>
         <% end %>
@@ -34,7 +34,7 @@
         <% @quote.opposers.each do |quote| %>
             <div class="against_quote">
                 <p><%= quote.text %></p>
-                <%= link_to "source", quote.source_url, class: "source" %>
+                <%= "source: #{quote.sitename}", quote.source_url, class: "source" %>
                 <%= link_to "see quote", quote_path(quote), class: "see_quote" %>
             </div>
         <% end %>
