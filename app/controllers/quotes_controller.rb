@@ -90,6 +90,18 @@ class QuotesController < ApplicationController
         redirect_to quote_path(@quote)
     end
 
+    def destroy
+        @quote = Quote.find(params[:id])
+        topic = @quote.topic
+        if @quote.user == current_user && @quote.supporters.empty? && @quote.opposers.empty?
+            @quote.destroy
+            redirect_to topic_path(topic)
+        else
+            flash[:alert] = "sorry, but only a quote with no linked quotes can be deleted."
+            redirect_to quote_path(@quote)
+        end
+    end
+
     # private
 
     def quote_params

@@ -1,10 +1,16 @@
-<div class="quote_actions">
-</div>
+<% if flash[:alert] %>
+    <div class="alert">
+        <p><%= flash[:alert] %></p>
+    </div>
+<% end %>
 <div class="quote_show">
     <h3 class="quote_text"><%= @quote.text %></h3>
     <p class="source_link"> - <%= link_to "source", @quote.source_url %></p><br>
     <p class="source_link"> - <%= link_to "add to clipboard", add_quote_path(@quote) %></p><br>
     <p class="source_link"> - <%= link_to "link a quote", link_quote_path(@quote) %></p><br>
+    <%= form_with model: @quote, method: 'delete', class: "source_link" do |f| %>
+        <%= f.submit "delete quote" %>
+    <% end %>
 </div>
 <div class="quote_row">
     <div class="for_column">
