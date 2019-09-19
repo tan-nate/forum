@@ -41,7 +41,11 @@ class QuotesController < ApplicationController
                     render :new
                 end
             else
-                render :new
+                if @quote.valid?
+                    render :new
+                else
+                    render :new
+                end
             end
         else
             if @quote.valid?
