@@ -1,6 +1,6 @@
 <div class="quote_show">
     <h3 class="quote_text"><%= @quote.text %></h3>
-    <p class="source_link"> - <%= link_to "source: #{quote.sitename}", @quote.source_url %></p>
+    <p class="source_link"> - <%= link_to "source: #{@quote.sitename}", @quote.source_url %></p>
 </div>
 <div class="link_new_quote_form">
     <%= form_with url: post_link_quote_path(@quote), class: "new_quote" do |f| %>

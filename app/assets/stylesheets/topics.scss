@@ -7,7 +7,6 @@
     text-align: center;
     display: block;
     margin: 1em;
-    color: blue;
 }
 .column {
     flex-basis: 25%;
@@ -52,6 +51,9 @@ a.new_quote_topic {
     margin: 0;
 }
 a.new_quote:visited {
+    color: blue;
+}
+a.new_quote {
     color: blue;
 }
 a.new_quote_topic:visited {

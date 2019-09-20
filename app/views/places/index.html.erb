@@ -1,24 +1,26 @@
 <% @places.each do |place| %>
     <br>
     <br>
-    <h2 class="place_title"><%= link_to place.name, place_path(place) %></h2>
-    <% if logged_in? %>
-        <% if !current_user.places.include?(place) %>
-            <%= form_with url: follow_place_path(place), class: "follow" do %>
-                <%= submit_tag("follow") %>
+    <div class="place_display">
+        <h2 class="place_title"><%= link_to place.name, place_path(place) %></h2>
+        <% if logged_in? %>
+            <% if !current_user.places.include?(place) %>
+                <%= form_with url: follow_place_path(place), class: "follow" do %>
+                    <%= submit_tag("follow") %>
+                <% end %>
+            <% else %>
+                <%= form_with url: unfollow_place_path(place), class: "follow" do %>
+                    <%= submit_tag("unfollow") %>
+                <% end %>
             <% end %>
-        <% else %>
-            <%= form_with url: unfollow_place_path(place), class: "follow" do %>
-                <%= submit_tag("unfollow") %>
+        <% end %>
+        <ul class="place_topics">
+            <% place.first_5_topics.each do |topic| %>
+                <li><%= link_to topic.name, topic_path(topic) %></li>
             <% end %>
-        <% end %>
-    <% end %>
-    <ul class="place_topics">
-        <% place.first_5_topics.each do |topic| %>
-            <li><%= link_to topic.name, topic_path(topic) %></li>
-        <% end %>
-        <% if place.topics.length > 5 %>
-            <li><%= link_to "see more...", place_path(place) %></li>
-        <% end %>
-    </ul>
+            <% if place.topics.length > 5 %>
+                <li><%= link_to "see more...", place_path(place) %></li>
+            <% end %>
+        </ul>
+    </div>
 <% end %>
