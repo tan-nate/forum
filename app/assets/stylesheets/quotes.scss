@@ -6,13 +6,24 @@ div.quote_show {
     margin: 1em;
 }
 h3.quote_text {
-    margin: 1em auto 1em;
+    margin: 1em auto 1.3em;
     width: 60%;
+    font-weight: lighter;
+    font-size: 1.3em;
 }
 .source_link {
     margin: -1em 0 0 0;
     text-align: right;
     width: 75%;
+}
+.add_source_link {
+    margin: -1em 0 0 0;
+    text-align: right;
+    width: 75%;
+    color: blue;
+}
+a.add_source_link:visited {
+    color: blue;
 }
 div.for_column {
     width: 30%;
@@ -24,8 +35,7 @@ div.for_column {
     vertical-align: top;
     text-align: left;
     padding: 1em;
-    border-width: 2px;
-    border-style: solid;
+    border-top: solid 1px;
     margin-bottom: 1em;
 }
 div.for_column div.title {
@@ -60,4 +70,10 @@ p.clipboard_instructions {
 }
 p.empty_clipboard {
     text-align: center;
+}
+div.title > h4 {
+    text-transform: uppercase;
+    font-weight: lighter;
+    font-style: italic;
+    font-size: 1.2em;
 }

@@ -24,10 +24,10 @@
             <p class="support_count">opposing: <%= quote.oppose_count %></p>
         </div>
     <% end %>
-    </div>
     <% if topic.quotes.length > 3 %>
         <br>
         <%= link_to "see more...", topic_path(topic), class: "see_more" %>
     <% end %>
+    </div>
     <br><br>
 <% end %>

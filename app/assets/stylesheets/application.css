@@ -14,7 +14,7 @@
  *= require_self 
  */
 
- header div.nav ul {
+  header div.nav ul {
     list-style-type: none;
     margin: 0 auto;
     padding: 0;
@@ -79,4 +79,20 @@
 
   a:visited { 
     text-decoration: none; color:black; 
+  }
+
+  a:link {
+    color:black; 
+  }
+
+  input {
+    background: transparent;
+  }
+
+  textarea {
+    background: transparent;
+  }
+
+  select {
+    background: transparent;
   }

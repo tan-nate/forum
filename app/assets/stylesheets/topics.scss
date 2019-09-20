@@ -7,14 +7,14 @@
     text-align: center;
     display: block;
     margin: 1em;
+    color: blue;
 }
 .column {
     flex-basis: 25%;
     vertical-align: top;
-    padding: 1em;
-    border-width: 2px;
-    border-style: solid;
-    margin: 5px;
+    padding: 0 1.3em;
+    margin: 0;
+    border-top: solid 1px;
 }
 .row {
     margin: 0 auto 0 15%;
@@ -30,9 +30,10 @@ h2 {
 }
 a.see_quote {
     float: right;
+    color: blue;
 }
-a.see_more {
-    margin-left: 17%;
+a.see_quote:visited {
+    color: blue;
 }
 div.centered_clipboard_title {
     text-align: center;
@@ -42,4 +43,30 @@ a.new_quote_topic {
     text-align: center;
     display: block;
     margin: 0 1em 1em 1em;
+    color: blue;
+}
+.topic_index_column {
+    flex-basis: 27%;
+    vertical-align: top;
+    padding: 0 1.3em;
+    margin: 0;
+}
+a.new_quote:visited {
+    color: blue;
+}
+a.new_quote_topic:visited {
+    color: blue;
+}
+.see_more {
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-style: italic;
+}
+.topic_row {
+    margin: 0 auto 0 15%;
+    display: flex;
+    flex-wrap: wrap;
+    width: 76%;
+    border-bottom: solid 1px;
+    padding-bottom: 12px;
 }

@@ -13,9 +13,9 @@
         <% end %>
     <% end %>
     <br><br>
-    <div class="row">
+    <div class="topic_row">
     <% topic.first_3_quotes.each do |quote| %>
-        <div class="column">
+        <div class="topic_index_column">
             <p><%= quote.text %></p>
             <%= link_to "source: #{quote.sitename}", quote.source_url, class: "source" %>
             <%= link_to "see quote", quote_path(quote), class: "see_quote" %><br>
@@ -23,10 +23,11 @@
             <p class="support_count">opposing: <%= quote.oppose_count %></p>
         </div>
     <% end %>
-    </div>
     <% if topic.quotes.length > 3 %>
-        <br>
-        <%= link_to "see more...", topic_path(topic), class: "see_more" %>
+        <div class="topic_index_column">
+            <%= link_to "see more...", topic_path(topic), class: "see_more" %>
+        </div>
     <% end %>
+    </div>
     <br><br>
 <% end %>

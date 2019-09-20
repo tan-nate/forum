@@ -4,8 +4,8 @@
 <div class="login_container">
     <div class="login">
         <%= form_for :user, url: '/sessions' do |f| %>
-            Username: <%= f.text_field :username %><br><br> 
-            Password: <%= f.password_field :password %>&nbsp; &nbsp; &nbsp; 
+            <%= f.text_field :username, placeholder: "username:" %><br><br> 
+            <%= f.password_field :password, placeholder: "password:" %>&nbsp; &nbsp; &nbsp; 
             <%= f.submit "Submit" %>
         <% end %>
     </div>

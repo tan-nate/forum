@@ -5,17 +5,30 @@ h2.clipboard_title {
     text-align: center;
     text-indent: 0;
     display: inline-block;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: lighter;
 }
 h2.clipboard_title_real {
     text-align: center;
     text-indent: 0;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: lighter;
 }
 div.clear_clipboard {
     text-align: center;
+    padding-bottom: 1em;
 }
 div.alert {
     margin-top: 2em;
     text-align: center;
     color: red;
     font-weight: bold;
+}
+.clipboard_column {
+    flex-basis: 25%;
+    vertical-align: top;
+    padding: 0 1.3em;
+    margin: 0;
 }
