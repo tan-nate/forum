@@ -22,7 +22,7 @@
         <% @quote.supporters.each do |quote| %>
             <div class="for_quote">
                 <p><%= quote.text %></p>
-                <%= "source: #{quote.sitename}", quote.source_url, class: "source" %>
+                <%= link_to "source: #{quote.sitename}", quote.source_url, class: "source" %>
                 <%= link_to "see quote", quote_path(quote), class: "see_quote" %>
             </div>
         <% end %>
@@ -34,7 +34,7 @@
         <% @quote.opposers.each do |quote| %>
             <div class="against_quote">
                 <p><%= quote.text %></p>
-                <%= "source: #{quote.sitename}", quote.source_url, class: "source" %>
+                <%= link_to "source: #{quote.sitename}", quote.source_url, class: "source" %>
                 <%= link_to "see quote", quote_path(quote), class: "see_quote" %>
             </div>
         <% end %>

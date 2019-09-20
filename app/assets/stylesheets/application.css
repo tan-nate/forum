@@ -19,12 +19,21 @@
     margin: 0 auto;
     padding: 0;
     overflow: hidden;
-    background-color: rgb(114, 114, 114);
     width: 70%;
   }
   
   header h1.title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    text-transform: uppercase;
     text-align: center;
+  }
+
+  div.nav {
+    text-transform: uppercase;
+    border-bottom: 1px solid #2f2f2f;
+    border-top: 1px solid #2f2f2f;
+    padding: 2px 0 2px 0;
   }
   
   header div.nav li {
@@ -37,7 +46,6 @@
   
   header div.nav li a {
     display: block;
-    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -45,16 +53,30 @@
   }
 
   header div.nav li p {
-    font-weight: bold;
-    color: rgb(124, 240, 240);
+    text-transform: none;
+    font-weight: 400;
+    font-style: italic;
     padding-right: 1em;
+    font-size: 1.2em;
+    margin-block-start: 14px;
+    margin-block-end: 14px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
   }
   
   /* Change the link color to #111 (black) on hover */
   header div.nav li a:hover {
-    background-color: #111;
+    background-color: #f9f7f1a9;
   }
 
   header div.nav li a.show_username:hover {
     background-color: rgb(114, 114, 114);
+  }
+
+  body {
+    background-color: #f9f7f1;
+  }
+
+  a:visited { 
+    text-decoration: none; color:black; 
   }
