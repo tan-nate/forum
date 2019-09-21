@@ -1,12 +1,12 @@
 <%= link_to "new quote", new_quote_path, class: "new_quote" %>
-<div class="topics_index_top_pane">
-    <% if logged_in? %>
-        <%= form_tag("/topics", method: "get", class: "topics_filter") do %>
-            <%= select_tag "filter", options_for_select(["following", current_user.places.collect { |p| p.name }].flatten, selected: params[:filter]) %>
-            <%= submit_tag "filter", style: "font-weight: bold"  %>
-        <% end %>
-    <% end %>
-</div>
+<% if logged_in? %>
+    <div class="topics_index_top_pane">
+            <%= form_tag("/topics", method: "get", class: "topics_filter") do %>
+                <%= select_tag "filter", options_for_select(["following", current_user.places.collect { |p| p.name }].flatten, selected: params[:filter]) %>
+                <%= submit_tag "filter", style: "font-weight: bold"  %>
+            <% end %>
+    </div>
+<% end %>
 <% @topics.each do |topic| %>
     <br>
     <h2 class="place_title"><%= link_to topic.name, topic_path(topic) %></h2>
