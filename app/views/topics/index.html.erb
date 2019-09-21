@@ -33,10 +33,7 @@
         </div>
     <% end %>
     <% if topic.quotes.length > 3 %>
-        <div class="topic_index_column">
-            <%= link_to "see more...", topic_path(topic), class: "see_more" %>
-        </div>
+        <%= link_to "see more...", topic_path(topic), class: "see_more" %>
     <% end %>
     </div>
-    <br><br>
 <% end %>
