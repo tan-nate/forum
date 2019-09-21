@@ -97,9 +97,12 @@
     background: transparent;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 850px) {
     /* For mobile phones: */
-    [class*="col-"] {
-      width: 100%;
+    .column {
+      flex-basis: 100%;
+    }
+    .topic_index_column {
+      flex-basis: 100%;
     }
   }

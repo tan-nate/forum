@@ -12,6 +12,7 @@ a.new_quote {
     text-align: center;
     display: block;
     font-size: 20px;
+    margin-top: 1em;
 }
 .new_quote > input, .new_quote > textarea {
     font-size: 16px;
@@ -24,17 +25,31 @@ a.new_quote {
     display: inline;
 }
 .column {
-    flex-basis: 25%;
+    flex-basis: 27%;
     vertical-align: top;
     padding: 0 1.3em;
     margin: 0;
     border-top: solid 1px;
 }
+.topic_index_column {
+    flex-basis: 27%;
+    vertical-align: top;
+    padding: 0 1.3em;
+    margin: 0;
+}
 .row {
-    margin: 0 auto 0 15%;
+    margin: 0 auto 0 13%;
     display: flex;
     flex-wrap: wrap;
     width: 80%;
+}
+.topic_row {
+    margin: 0 auto 0 13%;
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    border-bottom: solid 1px;
+    padding-bottom: 12px;
 }
 .box>* {
     flex: 1 1 160px;
@@ -59,12 +74,6 @@ a.new_quote_topic {
     margin: 0 1em 1em 1em;
     color: blue;
 }
-.topic_index_column {
-    flex-basis: 27%;
-    vertical-align: top;
-    padding: 0 1.3em;
-    margin: 0;
-}
 a.new_quote:visited {
     color: blue;
 }
@@ -79,16 +88,8 @@ a.new_quote_topic:visited {
     text-transform: uppercase;
     font-style: italic;
 }
-.topic_row {
-    margin: 0 auto 0 15%;
-    display: flex;
-    flex-wrap: wrap;
-    width: 76%;
-    border-bottom: solid 1px;
-    padding-bottom: 12px;
-}
 form.topics_filter {
-    margin: 2em 0 1em 16%;
+    margin: 1em 0 1em 0;
 }
 form.topics_filter > select {
     font-size: 1.2em;
@@ -97,4 +98,9 @@ form.topics_filter > select {
 form.topics_filter > input {
     font-size: 1.2em;
     font-family: 'Times New Roman', Times, serif;
+}
+div.topics_index_top_pane {
+    margin: 0 auto 0 13%;
+    width: 80%;
+    border-bottom: solid 1px;
 }

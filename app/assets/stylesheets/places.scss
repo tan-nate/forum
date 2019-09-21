@@ -3,8 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 ul.place_topics {
-    margin-left: 17%;
     font-size: 1.2em;
+    list-style-position: inside;
 }
 form.follow {
     display: inline;
@@ -19,11 +19,13 @@ h2.place_title {
     font-weight: lighter;
     font-style: italic;
     display: inline;
-    margin-left: 17%;
+    margin-left: 15%;
 }
 .place_topic_title {
     margin-top: 0;
 }
 div.place_display {
-    margin-left: 33%;
+    width: 30%;
+    margin: 0 auto;
+    text-align: center;
 }

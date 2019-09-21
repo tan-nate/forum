@@ -1,6 +1,5 @@
+<br>
 <% @places.each do |place| %>
-    <br>
-    <br>
     <div class="place_display">
         <h2 class="place_title"><%= link_to place.name, place_path(place) %></h2>
         <% if logged_in? %>
