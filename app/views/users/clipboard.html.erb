@@ -4,6 +4,9 @@
         <%= submit_tag("clear clipboard") %>
     <% end %>
 </div>
+<div class="topics_index_top_pane">
+</div>
+<br>
 <% @clipboard.clipboard_topics.each do |topic| %>
     <h2 class="place_title"><%= topic.name %></h2>
     <br>

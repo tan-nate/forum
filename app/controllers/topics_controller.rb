@@ -1,6 +1,15 @@
 class TopicsController < ApplicationController
     def index
-        @topics = Topic.all
+        if params[:filter].blank? || params[:filter] == "following"
+            if logged_in? && !current_user.topics.empty?
+                @topics = current_user.topics
+            else
+                @topics = Topic.all
+            end
+        else
+            place = Place.find_by(name: params[:filter])
+            @topics = place.topics
+        end
     end
 
     def show

@@ -14,95 +14,109 @@
  *= require_self 
  */
 
-  header div.nav ul {
-    list-style-type: none;
-    margin: 0 auto;
-    padding: 0;
-    overflow: hidden;
-    width: 70%;
+header div.nav ul {
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+  width: 70%;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  white-space: nowrap;
+}
+header h1.title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+}
+div.nav {
+  text-transform: uppercase;
+  border-bottom: 1px solid #2f2f2f;
+  border-top: 1px solid #2f2f2f;
+  padding: 2px 0 2px 0;
+}
+header div.nav li {
+  float: left;
+}
+header div.nav li.float_right {
+  float: right;
+}
+header div.nav li a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+header div.nav li p {
+  text-transform: none;
+  font-weight: 400;
+  font-style: italic;
+  padding-right: 1em;
+  font-size: 1.2em;
+  margin-block-start: 14px;
+  margin-block-end: 14px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+/* Change the link color to #111 (black) on hover */
+header div.nav li a:hover {
+  background-color: #f9f7f1a9;
+}
+header div.nav li a.show_username:hover {
+  background-color: rgb(114, 114, 114);
+}
+body {
+  background-color: #f9f7f1;
+}
+a:visited { 
+  text-decoration: none; color:black; 
+}
+a:link {
+  color:black; 
+}
+input {
+  background: transparent;
+}
+textarea {
+  background: transparent;
+}
+select {
+  background: transparent;
+}
+@media only screen and (max-device-width: 850px) {
+  /* For mobile phones: */
+  .column {
+    flex-basis: 100%;
   }
-  
-  header h1.title {
-    font-family: 'Playfair Display', serif;
-    font-weight: 900;
-    text-transform: uppercase;
-    text-align: center;
+  .topic_index_column {
+    flex-basis: 100%;
   }
-
-  div.nav {
-    text-transform: uppercase;
-    border-bottom: 1px solid #2f2f2f;
-    border-top: 1px solid #2f2f2f;
-    padding: 2px 0 2px 0;
+}
+@media only screen and (max-device-width: 850px) {
+  /* For mobile phones: */
+  .column {
+    flex-basis: 100%;
   }
-  
-  header div.nav li {
-    float: left;
+  .topic_index_column {
+    flex-basis: 100%;
   }
-
-  header div.nav li.float_right {
-      float: right;
+}
+@media only screen and (max-width: 850px) {
+  /* For mobile phones: */
+  .column {
+    flex-basis: 100%;
   }
-  
-  header div.nav li a {
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 1.2em;
+  .topic_index_column {
+    flex-basis: 100%;
   }
-
-  header div.nav li p {
-    text-transform: none;
-    font-weight: 400;
-    font-style: italic;
-    padding-right: 1em;
-    font-size: 1.2em;
-    margin-block-start: 14px;
-    margin-block-end: 14px;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+}
+@media only screen and (max-width: 850px) {
+  /* For mobile phones: */
+  .column {
+    flex-basis: 100%;
   }
-  
-  /* Change the link color to #111 (black) on hover */
-  header div.nav li a:hover {
-    background-color: #f9f7f1a9;
+  .topic_index_column {
+    flex-basis: 100%;
   }
-
-  header div.nav li a.show_username:hover {
-    background-color: rgb(114, 114, 114);
-  }
-
-  body {
-    background-color: #f9f7f1;
-  }
-
-  a:visited { 
-    text-decoration: none; color:black; 
-  }
-
-  a:link {
-    color:black; 
-  }
-
-  input {
-    background: transparent;
-  }
-
-  textarea {
-    background: transparent;
-  }
-
-  select {
-    background: transparent;
-  }
-
-  @media only screen and (max-width: 850px) {
-    /* For mobile phones: */
-    .column {
-      flex-basis: 100%;
-    }
-    .topic_index_column {
-      flex-basis: 100%;
-    }
-  }
+}
