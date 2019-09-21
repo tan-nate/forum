@@ -1,9 +1,11 @@
-<% if params[:topic_id] %>
-    <%= render 'form' %>
-<% elsif params[:quote] %>
-  <% if params[:quote][:topic_id] %>
-    <%= render 'form' %>
+<div class="new_quote">
+  <% if params[:topic_id] %>
+      <%= render 'form' %>
+  <% elsif params[:quote] %>
+    <% if params[:quote][:topic_id] %>
+      <%= render 'form' %>
+    <% end %>
+  <% else %>
+    <%= render 'new_topic_form' %>
   <% end %>
-<% else %>
-  <%= render 'new_topic_form' %>
-<% end %>
+</div>

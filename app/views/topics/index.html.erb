@@ -1,3 +1,9 @@
+<% if logged_in? %>
+    <%= form_tag("/topics", method: "get", class: "topics_filter") do %>
+        <%= select_tag "filter", options_for_select(["following", current_user.places.collect { |p| p.name }].flatten) %>
+        <%= submit_tag "Filter"  %>
+    <% end %>
+<% end %>
 <%= link_to "new quote", new_quote_path, class: "new_quote" %>
 <% @topics.each do |topic| %>
     <h2 class="place_title"><%= link_to topic.name, topic_path(topic) %></h2>

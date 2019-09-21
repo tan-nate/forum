@@ -61,12 +61,16 @@ div.against_column div.title {
     text-align: left;
 }
 #link_new_quote_instructions {
-    font-weight: bold;
+    font-weight: light;
+    text-transform: uppercase;
+    font-style: italic;
 }
 p.clipboard_instructions {
     text-align: center;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: light;
+    text-transform: uppercase;
+    font-style: italic;
 }
 p.empty_clipboard {
     text-align: center;

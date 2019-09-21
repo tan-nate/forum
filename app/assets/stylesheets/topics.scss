@@ -2,11 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.new_quote {
-    font-size: 20px;
+div.new_quote {
+    width: 30%;
+    margin: 0 auto;
+    padding-left: 10em;
+    margin-top: 1.6em;
+}
+a.new_quote {
     text-align: center;
     display: block;
-    margin: 1em;
+    font-size: 20px;
+}
+.new_quote > input, .new_quote > textarea {
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    display: block;
+}
+.new_quote > select {
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    display: inline;
 }
 .column {
     flex-basis: 25%;
@@ -71,4 +86,15 @@ a.new_quote_topic:visited {
     width: 76%;
     border-bottom: solid 1px;
     padding-bottom: 12px;
+}
+form.topics_filter {
+    margin: 2em 0 1em 16%;
+}
+form.topics_filter > select {
+    font-size: 1.2em;
+    font-family: 'Times New Roman', Times, serif;
+}
+form.topics_filter > input {
+    font-size: 1.2em;
+    font-family: 'Times New Roman', Times, serif;
 }

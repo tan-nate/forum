@@ -6,9 +6,9 @@
     <%= form_with url: post_link_quote_path(@quote), class: "new_quote" do |f| %>
         <%= label_tag nil, " link a new quote:", id: "link_new_quote_instructions" %><br><br>
         <%= radio_button_tag :type, "support" %>
-        <%= label_tag :type_support, "supporting" %><br>
+        <%= label_tag :type_support, "supporting", style: "font-size: 16px; font-weight: bold" %><br>
         <%= radio_button_tag :type, "oppose" %>
-        <%= label_tag :type_oppose, "opposing" %><br><br>
+        <%= label_tag :type_oppose, "opposing", style: "font-size: 16px; font-weight: bold" %><br><br>
         <%= f.text_area :text, placeholder: "quote text:" %><br>
         <%= f.text_field :source_url, placeholder: "source url:" %><br>
         <%= f.submit "link quote" %>
@@ -25,9 +25,9 @@
         <%= form_with url: post_link_clipboard_path(@quote), class: "clipboard_link_form" do |f| %>
             <%= hidden_field_tag :linked_quote_id, quote.id %>
             <%= radio_button_tag :type, "support" %>
-            <%= label_tag :type_support, "supporting" %><br>
+            <%= label_tag :type_support, "supporting", style: "font-weight: bold" %><br>
             <%= radio_button_tag :type, "oppose" %>
-            <%= label_tag :type_oppose, "opposing" %><br><br>
+            <%= label_tag :type_oppose, "opposing", style: "font-weight: bold" %><br><br>
             <%= f.submit "link quote" %>
         <% end %>
     </div>

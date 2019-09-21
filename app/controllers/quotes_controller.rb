@@ -59,7 +59,9 @@ class QuotesController < ApplicationController
 
     def add
         @quote = Quote.find(params[:id])
-        current_user.clipboard.quotes << @quote
+        if !current_user.clipboard.quotes.include?(@quote)
+            current_user.clipboard.quotes << @quote
+        end
         redirect_to clipboard_path(current_user)
     end
 
@@ -83,9 +85,13 @@ class QuotesController < ApplicationController
         @quote = Quote.find(params[:id])
         linked_quote = Quote.find(params[:linked_quote_id])
         if params[:type] == "support"
-            @quote.supporters << linked_quote
+            if !@quote.supporters.include?(linked_quote) && linked_quote != @quote
+                @quote.supporters << linked_quote
+            end
         elsif params[:type] == "oppose"
-            @quote.opposers << linked_quote
+            if !@quote.opposers.include?(linked_quote) && linked_quote != @quote
+                @quote.opposers << linked_quote
+            end
         end
         redirect_to quote_path(@quote)
     end
