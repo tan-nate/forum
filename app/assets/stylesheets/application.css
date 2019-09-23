@@ -20,6 +20,7 @@ header div.nav ul {
   padding: 0;
   width: 70%;
   height: 50px;
+  overflow: hidden;
   white-space: nowrap;
 }
 header h1.title {
@@ -98,6 +99,12 @@ select {
   .clipboard_column {
     flex-basis: 100%;
   }
+  div.nav {
+    width: 100%;
+  }
+  header div.nav ul {
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 850px) {
   /* For mobile phones: */
@@ -111,8 +118,6 @@ select {
   .clipboard_column {
     flex-basis: 100%;
   }
-}
-@media only screen and (max-width: 600px) {
   div.nav {
     width: 100%;
   }
