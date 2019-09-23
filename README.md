@@ -1,24 +1,3 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Forum is an app that lets you browse and link together snippets from news articles across the web. To start the app, fork and clone this repo. Then run 'bundle install' and 'rails s'. Finally, visit the URL provided to start the app. 
