@@ -21,7 +21,7 @@
 <div class="row">
 <% @clipboard.clipboard_topic_quotes(@quote.topic).each do |quote| %>
     <div class="column">
-        <p><%= quote.text %></p>
+        <p class="quote_text"><%= quote.text %></p>
         <%= form_with url: post_link_clipboard_path(@quote), class: "clipboard_link_form" do |f| %>
             <%= hidden_field_tag :linked_quote_id, quote.id %>
             <%= radio_button_tag :type, "support" %>

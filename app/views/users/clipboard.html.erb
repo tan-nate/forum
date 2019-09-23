@@ -14,7 +14,7 @@
     <div class="row">
     <% @clipboard.clipboard_topic_quotes(topic).each do |quote| %>
         <div class="clipboard_column">
-            <p><%= quote.text %></p>
+            <p class="quote_text"><%= quote.text %></p>
             <%= link_to "source: #{quote.sitename}", quote.source_url, class: "source" %>
             <%= link_to "see quote", quote_path(quote), class: "see_quote" %>
             <p class="support_count">supporting: <%= quote.support_count %></p>

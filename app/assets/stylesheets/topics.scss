@@ -37,6 +37,9 @@ a.new_quote {
     padding: 0 1.3em;
     margin: 0;
 }
+.topic_index_column p#text {
+    white-space: pre-wrap;
+}
 .row {
     margin: 0 auto 0 13%;
     display: flex;
