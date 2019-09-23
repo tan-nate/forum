@@ -87,6 +87,7 @@ a.new_quote_topic:visited {
     font-size: 1.2em;
     text-transform: uppercase;
     font-style: italic;
+    display: block;
 }
 form.topics_filter {
     margin: 1em 0 1em 0;
@@ -103,4 +104,8 @@ div.topics_index_top_pane {
     margin: 0 auto 0 13%;
     width: 80%;
     border-bottom: solid 1px;
+}
+div.break_column {
+    padding-top: 1em;
+    flex-basis: 100%;
 }
