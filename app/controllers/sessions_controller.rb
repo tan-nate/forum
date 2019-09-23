@@ -3,13 +3,23 @@ class SessionsController < ApplicationController
     end
     
     def create
-        @user = User.find_by(username: params[:user][:username])
-        if @user
+        if auth
+            @user = User.find_or_create_by(uid: auth['uid']) do |u|
+                u.username = namify(auth['info']['name'])
+            end
+        
             session[:user_id] = @user.id
+        
             redirect_to root_path
         else
-            flash[:alert] = "check your username and password"
-            redirect_to '/login'
+            @user = User.find_by(username: params[:user][:username])
+            if @user
+                session[:user_id] = @user.id
+                redirect_to root_path
+            else
+                flash[:alert] = "check your username and password"
+                redirect_to '/login'
+            end
         end
     end
 

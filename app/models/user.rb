@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
     has_one :clipboard
 
-    validates :username, format: { with: /\A(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9.]+(?<![_.])\z/,
-        message: "is not a valid username. 8-20 characters: letters, numbers, and dots" }
+    validates :username, format: { with: /\A(?=.{2,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9.]+(?<![_.])\z/,
+        message: "is not a valid username. 2-20 characters: letters, numbers, and dots" }
     validates :username, uniqueness: true
 end

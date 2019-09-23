@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   get '/login', to: 'sessions#new'
   get '/logout', to: 'sessions#delete'
+  get '/auth/facebook/callback' => 'sessions#create'
 
   get '/forbidden', to: 'errors#forbidden', as: 'forbidden'
 
