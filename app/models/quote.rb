@@ -28,6 +28,10 @@ class Quote < ApplicationRecord
     end
 
     def sitename
-        URI.parse(source_url).host.match(/(?<=\.)(.*?)(?=\.)/)[0]
+        shortened_url = URI.parse(source_url).host
+        if !shortened_url.start_with?('www')
+            shortened_url = shortened_url.prepend('www.')
+        end
+        shortened_url.match(/(?<=\.)(.*?)(?=\.)/)[0]
     end
 end
