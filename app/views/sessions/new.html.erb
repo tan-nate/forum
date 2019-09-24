@@ -5,8 +5,8 @@
     <div class="login">
         <%= form_for :user, url: '/sessions' do |f| %>
             <%= f.text_field :username, placeholder: "username:" %><br><br> 
-            <%= f.password_field :password, placeholder: "password:" %>&nbsp; &nbsp; &nbsp; 
-            <%= f.submit "Submit" %>
+            <%= f.password_field :password, placeholder: "password:" %>
+            <%= f.submit "Submit", style: "display: inline" %>
         <% end %>
     </div>
 </div>

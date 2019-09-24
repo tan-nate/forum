@@ -4,7 +4,10 @@ class SessionsController < ApplicationController
     
     def create
         if auth
-            @user = User.find_or_create_by(uid: auth['uid'], username: namify(auth[:info][:name]), password_digest: "facebook-login", clipboard: Clipboard.create)
+            @user = User.find_by(uid: auth['uid'])
+            if !@user
+                @user = User.create(uid: auth['uid'], username: namify(auth[:info][:name]), password_digest: "facebook-login", clipboard: Clipboard.create)
+            end
             session[:user_id] = @user.id
             redirect_to root_path
         else
