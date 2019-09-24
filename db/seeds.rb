@@ -25,7 +25,7 @@ usa.users << [natedogg, christina, eddie]
 
 border_crisis.users << [natedogg, christina, eddie]
 
-border_crisis_quote.supporters << border_crisis_quote_for
+border_crisis_quote.opposers << border_crisis_quote_for
 border_crisis_quote.opposers << border_crisis_quote_against
 
 # CLIPBOARD ACTION
