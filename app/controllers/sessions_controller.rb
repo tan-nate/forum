@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
     end
     
     def create
+        #binding.pry
         if auth
             @user = User.find_by(uid: auth['uid'])
             if !@user
@@ -13,8 +14,13 @@ class SessionsController < ApplicationController
         else
             @user = User.find_by(username: params[:user][:username])
             if @user
-                session[:user_id] = @user.id
-                redirect_to root_path
+                if @user.authenticate(params[:user][:password])
+                    session[:user_id] = @user.id
+                    redirect_to root_path
+                else
+                    flash[:alert] = "check your username and password"
+                    redirect_to '/login'
+                end
             else
                 flash[:alert] = "check your username and password"
                 redirect_to '/login'
