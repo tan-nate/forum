@@ -9,7 +9,7 @@
 <% end %>
 <% @topics.each do |topic| %>
     <br>
-    <h2 class="place_title"><%= link_to topic.name, topic_path(topic) %></h2>
+    <h2 class="place_title"><%= link_to topic.name, topic_path(topic) %> (<%= topic.place.name %>)</h2>
     <% if logged_in? %>
         <% if !current_user.topics.include?(topic) %>
             <%= form_with url: follow_topic_path(topic), class: "follow" do %>

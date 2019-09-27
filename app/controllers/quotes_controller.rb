@@ -100,7 +100,12 @@ class QuotesController < ApplicationController
         topic = @quote.topic
         if @quote.user == current_user && @quote.supporters.empty? && @quote.opposers.empty?
             @quote.destroy
-            redirect_to topic_path(topic)
+            if topic.quotes.empty?
+                topic.destroy
+                redirect_to topics_path
+            else
+                redirect_to topic_path(topic)
+            end
         else
             flash[:alert] = "sorry, but only a quote with no linked quotes can be deleted."
             redirect_to quote_path(@quote)
