@@ -113,7 +113,7 @@ class QuotesController < ApplicationController
     end
 
     def vote
-        binding.pry
+        #binding.pry
     end
 
     private
