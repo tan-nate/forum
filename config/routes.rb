@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/quotes/:id/link', to: 'quotes#link', as: 'link_quote'
   post '/quotes/:id/link', to: 'quotes#post_link', as: 'post_link_quote'
   post '/quotes/:id/link_clipboard', to: 'quotes#post_link_clipboard', as: 'post_link_clipboard'
+  post '/quotes/:id/vote', to: 'quotes#vote', as: 'post_vote'
 
   post '/places/:id/follow', to: 'places#follow', as: 'follow_place'
   post '/places/:id/unfollow', to: 'places#unfollow', as: 'unfollow_place'

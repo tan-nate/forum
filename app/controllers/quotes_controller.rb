@@ -112,6 +112,10 @@ class QuotesController < ApplicationController
         end
     end
 
+    def vote
+        binding.pry
+    end
+
     private
 
     def quote_params

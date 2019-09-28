@@ -91,3 +91,10 @@ form.new_quote input#type_oppose, input#type_support {
 .quote_text {
     white-space: pre-wrap;
 }
+form.vote {
+    text-align: center;
+    margin: 1em 0 -1em 0;
+}
+form.vote input {
+    font-weight: bold;
+}
