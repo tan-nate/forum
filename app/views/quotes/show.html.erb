@@ -24,15 +24,6 @@
                 <p class="quote_text"><%= quote.text %></p>
                 <%= link_to "source: #{quote.sitename}", quote.source_url, class: "source" %>
                 <%= link_to "see quote", quote_path(quote), class: "see_quote" %>
-                <%= form_with url: post_vote_path, class: "vote" do %>
-                    <%= hidden_field_tag :quote_id, value: @quote.id %>
-                    <%= hidden_field_tag :quote_id, value: quote.id %>  
-                    <%= radio_button_tag(:vote, "relevant") %>
-                    <%= label_tag(:vote_relevant, "relevant") %>
-                    <%= radio_button_tag(:vote, "irrelevant") %>
-                    <%= label_tag(:vote_irrelevant, "irrelevant") %>
-                    <%= submit_tag "submit" %>
-                <% end %>
             </div>
         <% end %>
     </div>
@@ -45,15 +36,6 @@
                 <p class="quote_text"><%= quote.text %></p>
                 <%= link_to "source: #{quote.sitename}", quote.source_url, class: "source" %>
                 <%= link_to "see quote", quote_path(quote), class: "see_quote" %>
-                <%= form_with url: post_vote_path, class: "vote" do %>
-                    <%= hidden_field_tag :quote_id, value: @quote.id %>
-                    <%= hidden_field_tag :quote_id, value: quote.id %>  
-                    <%= radio_button_tag(:vote, "relevant") %>
-                    <%= label_tag(:vote_relevant, "relevant") %>
-                    <%= radio_button_tag(:vote, "irrelevant") %>
-                    <%= label_tag(:vote_irrelevant, "irrelevant") %>
-                    <%= submit_tag "submit" %>
-                <% end %>
             </div>
         <% end %>
     </div>
