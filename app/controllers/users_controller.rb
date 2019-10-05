@@ -6,14 +6,14 @@ class UsersController < ApplicationController
     end
 
     def create
-        #binding.pry
         if User.find_by(username: user_params[:username])
             flash[:alert] = "username is taken"
             redirect_to '/signup'
         else
-            user = User.new(user_params)
-            if user.save
-                user.update(clipboard: Clipboard.create)
+            @user = User.new(user_params)
+            if @user.save
+                @user.update(clipboard: Clipboard.create)
+                session[:user_id] = @user.id
                 redirect_to root_path
             end
         end

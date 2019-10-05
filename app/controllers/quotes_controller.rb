@@ -19,7 +19,6 @@ class QuotesController < ApplicationController
     end
 
     def create
-        binding.pry
         if params[:quote]
             if params[:quote][:topic_id]
                 @quote = current_user.quotes.new(quote_params)
@@ -114,7 +113,6 @@ class QuotesController < ApplicationController
     end
 
     def vote
-        #binding.pry
     end
 
     private

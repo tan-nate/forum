@@ -3,7 +3,6 @@ class SessionsController < ApplicationController
     end
     
     def create
-        #binding.pry
         if auth
             @user = User.find_by(uid: auth['uid'])
             if !@user
