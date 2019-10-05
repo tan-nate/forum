@@ -1,6 +1,20 @@
 <% if flash[:alert] %>
     <div class="alert"><%= flash[:alert] %></div>
 <% end %>
+<% if @user.errors.any? %>
+<div class="new_quote">
+  <div id="error_explanation">
+    <h4>
+      some errors prohibited this user from being saved:
+    </h4>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg.downcase %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<% end %>
 <div class="login_container">
     <div class="login">
         <%= form_for @user do |f| %>
