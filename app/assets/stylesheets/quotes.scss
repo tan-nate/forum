@@ -25,6 +25,9 @@ h3.quote_text {
 a.add_source_link:visited {
     color: blue;
 }
+div.quote_show a.add_source_link {
+    color: blue;
+}
 div.for_column {
     width: 30%;
     float: left;
@@ -97,4 +100,10 @@ form.vote {
 }
 form.vote input {
     font-weight: bold;
+}
+#new_topic_form_text_field {
+    display: inline;
+}
+#new_topic_form_collection_select {
+    display: inline;
 }

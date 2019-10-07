@@ -1,26 +1,19 @@
-<% if @quote.errors.any? || @topic.errors.any? %>
+<% if @quote.errors.any? %>
   <div id="error_explanation">
     <h4>
       some errors prohibited this quote from being saved:
     </h4>
     <ul>
-    <% if @topic.errors.any? %>
-      <% @topic.errors.full_messages.each do |msg| %>
-        <li><%= msg.downcase %></li>
-      <% end %>
-    <% end %>
-    <% if @quote.errors.any? %>
       <% @quote.errors.full_messages.each do |msg| %>
         <li><%= msg.downcase %></li>
       <% end %>
-    <% end %>
     </ul>
   </div>
 <% end %>
-<%= form_with url: quotes_path, class: "new_quote", local: true do |f| %>
-    <%= f.text_field :topic_name, value: @topic.name, placeholder: "topic:", style: "margin-bottom: 1em; display: inline" %>
-    <%= f.collection_select :topic_place_id, Place.all, :id, :name, value: @topic.place_id, style: "display: inline" %><br>
-    <%= f.text_area :text, placeholder: "quote text:", value: @quote.text %><br>
-    <%= f.text_field :source_url, placeholder: "source url:", value: @quote.source_url %><br>
-    <%= f.submit "create quote" %>
+<%= form_for @quote, class: "new_quote" do |f| %>
+  <%= f.text_field :topic_name, placeholder: "topic:", id: "new_topic_form_text_field" %>
+  <%= f.collection_select :topic_place, Place.all, :id, :name, id: "new_topic_form_collection_select" %><br><br>
+  <%= f.text_area :text, placeholder: "quote text:", value: @quote.text %><br>
+  <%= f.text_field :source_url, placeholder: "source url:", value: @quote.source_url %><br>
+  <%= f.submit "create quote" %>
 <% end %>
