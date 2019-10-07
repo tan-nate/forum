@@ -12,9 +12,6 @@
   </div>
   <% end %>
   <%= form_for @quote, class: "new_quote" do |f| %>
-  <% if params[:topic_id] %>
-    <%= f.hidden_field :topic_id %>
-  <% end %>
   <%= f.text_field :topic_name, placeholder: "topic:", id: "new_topic_form_text_field" %>
   <%= f.collection_select :topic_place, Place.all, :id, :name, id: "new_topic_form_collection_select" %><br><br>
   <%= f.text_area :text, placeholder: "quote text:", value: @quote.text %><br>

@@ -22,7 +22,7 @@ class QuotesController < ApplicationController
         if @quote.save
             redirect_to quote_path(@quote)
         else
-            @quote.topic.destroy
+            @quote.topic.destroy if @quote.topic.quotes.empty?
             render :new
         end
     end
@@ -89,6 +89,6 @@ class QuotesController < ApplicationController
     private
 
     def quote_params
-        params.require(:quote).permit(:text, :source_url, :topic_id)
+        params.require(:quote).permit(:text, :source_url)
     end
 end
