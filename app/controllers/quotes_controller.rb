@@ -18,9 +18,11 @@ class QuotesController < ApplicationController
 
     def create
         @quote = current_user.quotes.new(quote_params)
+        @quote.topic = Topic.find_or_create_by(name: namify(params[:quote][:topic_name]), place_id: params[:quote][:topic_place])
         if @quote.save
             redirect_to quote_path(@quote)
         else
+            @quote.topic.destroy
             render :new
         end
     end
@@ -87,6 +89,6 @@ class QuotesController < ApplicationController
     private
 
     def quote_params
-        params.require(:quote).permit(:text, :source_url, :topic_id, :topic_name, :topic_place)
+        params.require(:quote).permit(:text, :source_url, :topic_id)
     end
 end

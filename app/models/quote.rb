@@ -20,16 +20,8 @@ class Quote < ApplicationRecord
         message: "is not a valid url" }
     validates_presence_of :topic_id, message: " must be between 1 and 40 characters: letters, numbers, or spaces"
 
-    def topic_name=(name)
-        self.topic = Topic.find_or_create_by(name: namify(name))
-    end
-
     def topic_name
         self.topic ? self.topic.name : nil
-    end
-
-    def topic_place=(place_id)
-        self.topic.place = Place.find(place_id)
     end
 
     def topic_place
