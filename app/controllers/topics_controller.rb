@@ -6,6 +6,8 @@ class TopicsController < ApplicationController
             else
                 @topics = Topic.all
             end
+        elsif params[:filter] == "recent"
+            @topics = Topic.five_most_recent
         else
             place = Place.find_by(name: params[:filter])
             @topics = place.topics
