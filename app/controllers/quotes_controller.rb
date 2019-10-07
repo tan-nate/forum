@@ -1,6 +1,10 @@
 class QuotesController < ApplicationController
     before_action :require_login, only: [:new, :create, :add, :link, :post_link]
     
+    def index
+        redirect_to root_path
+    end
+    
     def show
         @quote = Quote.find(params[:id])
         if current_user
