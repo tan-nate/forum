@@ -1,0 +1,5 @@
+<%= form_for @topic, class: "new_quote" do |f| %>
+    <%= f.text_field :name, placeholder: "topic:", id: "new_topic_form_text_field" %>
+    <%= f.collection_select :place_id, Place.all, :id, :name, id: "new_topic_form_collection_select" %><br><br>
+    <%= f.submit "create topic" %>
+<% end %>

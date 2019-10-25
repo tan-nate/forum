@@ -1,4 +1,17 @@
 class TopicsController < ApplicationController
+    def new
+        @topic = Topic.new
+    end
+
+    def create
+        @topic = Topic.new(topic_params)
+        if @topic.save
+            redirect_to topic_path(@topic)
+        else
+            render :new
+        end
+    end
+    
     def index
         if params[:filter].blank? || params[:filter] == "following"
             if logged_in? && !current_user.topics.empty?
@@ -29,5 +42,11 @@ class TopicsController < ApplicationController
         @topic = Topic.find(params[:id])
         current_user.topics.delete(@topic)
         redirect_to topics_path
+    end
+
+    private
+
+    def topic_params
+        params.require(:topic).permit(:name, :place_id)
     end
 end
