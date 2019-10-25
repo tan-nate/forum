@@ -2,20 +2,21 @@ class TopicsController < ApplicationController
     def index
         if params[:filter].blank? || params[:filter] == "following"
             if logged_in? && !current_user.topics.empty?
-                @topics = current_user.topics
+                @topics = current_user.topics.most_recent
             else
-                @topics = Topic.all
+                @topics = Topic.all.most_recent
             end
-        elsif params[:filter] == "recent"
-            @topics = Topic.five_most_recent
+        elsif params[:filter] == "all"
+            @topics = Topic.all.most_recent
         else
             place = Place.find_by(name: params[:filter])
-            @topics = place.topics
+            @topics = place.topics.most_recent
         end
     end
 
     def show
         @topic = Topic.find(params[:id])
+        @quotes = @topic.quotes.most_recent
     end
 
     def follow

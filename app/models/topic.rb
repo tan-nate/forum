@@ -8,8 +8,6 @@ class Topic < ApplicationRecord
         message: "of topic only allows letters, numbers, and spaces" }
     validates :name, length: { in: 1..40,
         message: "of topic must be between 1 and 40 characters" }
-
-    scope :five_most_recent, -> { order(created_at: :desc).limit(5) }
     
     def first_3_quotes
         self.quotes.limit(3).to_a

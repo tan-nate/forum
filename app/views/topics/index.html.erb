@@ -2,7 +2,7 @@
 <% if logged_in? %>
     <div class="topics_index_top_pane">
             <%= form_tag("/topics", method: "get", class: "topics_filter") do %>
-                <%= select_tag "filter", options_for_select(["following", "recent", current_user.places.collect { |p| p.name }].flatten, selected: params[:filter]) %>
+                <%= select_tag "filter", options_for_select(["following", "all", current_user.places.collect { |p| p.name }].flatten, selected: params[:filter]) %>
                 <%= submit_tag "filter", style: "font-weight: bold"  %>
             <% end %>
     </div>

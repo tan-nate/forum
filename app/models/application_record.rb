@@ -16,4 +16,6 @@ class ApplicationRecord < ActiveRecord::Base
         end
         new_name
     end
+
+    scope :most_recent, -> { order(created_at: :desc) }
 end

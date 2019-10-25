@@ -16,7 +16,7 @@
 <div class="topics_index_top_pane">
 </div>
 <div class="row">
-<% @topic.quotes.each do |quote| %>
+<% @quotes.each do |quote| %>
     <div class="clipboard_column">
         <p class="quote_text"><%= quote.text %></p>
         <%= link_to "source: #{quote.sitename}", quote.source_url, class: "source" %>
