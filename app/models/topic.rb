@@ -9,7 +9,7 @@ class Topic < ApplicationRecord
     validates :name, length: { in: 1..40,
         message: "of topic must be between 1 and 40 characters" }
     
-    def first_3_quotes
-        self.quotes.limit(3).to_a
+    def last_3_quotes
+        self.quotes.most_recent.limit(3).to_a
     end
 end

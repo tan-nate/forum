@@ -28,7 +28,7 @@
     <% end %>
     <br><br>
     <div class="topic_row">
-    <% topic.first_3_quotes.each do |quote| %>
+    <% topic.last_3_quotes.each do |quote| %>
         <div class="topic_index_column">
             <p class="quote_text"><%= quote.text %></p>
             <%= link_to "source: #{quote.sitename}", quote.source_url, class: "source" %>
