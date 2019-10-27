@@ -36,6 +36,10 @@ class Quote < ApplicationRecord
         opposers.length
     end
 
+    def rating
+        support_count - oppose_count
+    end
+
     def sitename
         shortened_url = URI.parse(source_url).host
         number_of_dots = shortened_url.split(//).select { |l| l == '.' }
@@ -43,5 +47,9 @@ class Quote < ApplicationRecord
             shortened_url = shortened_url.prepend('www.')
         end
         shortened_url.match(/(?<=\.)(.*?)(?=\.)/)[0]
+    end
+
+    def order_by_rating
+        sort_by { |quote| quote.rating }
     end
 end
