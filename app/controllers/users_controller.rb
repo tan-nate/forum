@@ -21,6 +21,14 @@ class UsersController < ApplicationController
         end
     end
 
+    def index
+        if logged_in?
+            @users = current_user.followees.push(User.most_quotes)
+        else
+            @users = User.most_quotes
+        end
+    end
+
     def clipboard
         user = User.find(params[:id])
         @clipboard = user.clipboard

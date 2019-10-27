@@ -1,0 +1,27 @@
+<% @users.each do |user| %>
+    <div class="centered_clipboard_title_place">
+        <h2 class="clipboard_title"><%= user.username %></h2>
+    </div>
+    <% user.quote_topics.uniq.each do |topic| %>
+        <br>
+        <h2 class="place_title"><%= link_to topic.name, topic_path(topic) %></h2>
+        <br>
+        <br>
+        <div class="topic_row">
+            <% topic.last_3_quotes.each do |quote| %>
+                <div class="topic_index_column">
+                    <p class="quote_text"><%= quote.text %></p>
+                    <%= link_to "source: #{quote.sitename}", quote.source_url, class: "source" %>
+                    <%= link_to "see quote", quote_path(quote), class: "see_quote" %><br>
+                    <p class="support_count">supporting: <%= quote.support_count %></p>
+                    <p class="support_count">opposing: <%= quote.oppose_count %></p>
+                </div>
+            <% end %>
+            <% if topic.quotes.length > 3 %>
+                <div class="break_column"></div>
+                <%= link_to "see more...", topic_path(topic), class: "see_more" %>
+            <% end %>
+            <br>
+        </div>
+    <% end %>
+<% end %>
