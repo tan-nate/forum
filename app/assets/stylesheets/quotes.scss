@@ -109,5 +109,10 @@ form.vote input {
 }
 div.quote_show p.quote_show_support_count {
     float: left;
-    margin: -1em 0 0 20%;
+    margin: -0.8em 0 0 20%;
+    padding: 4px;
+}
+p#quote_user {
+    font-style: italic;
+    font-size: 1.4em;
 }
