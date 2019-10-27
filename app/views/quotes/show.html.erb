@@ -5,13 +5,13 @@
 <% end %>
 <div class="quote_show">
     <h3 class="quote_text"><%= @quote.text %></h3>
-    <p class="quote_show_support_count" id="quote_user">- <%= link_to @quote.user.username, quote_path(@quote) %></p>
+    <p class="quote_show_support_count" id="quote_user">- <%= link_to @quote.user.username, user_path(@quote.user) %></p>
     <p class="source_link"> - <%= link_to "source: #{@quote.sitename}", @quote.source_url %></p>
     <br>
-    <p class="quote_show_support_count"><%= @quote.support_count %> supporting</p>
+    <p class="quote_show_support_count" id="top"><%= @quote.support_count %> supporting</p>
     <p class="source_link"> - <%= link_to "add to clipboard", add_quote_path(@quote) %></p>
     <br>
-    <p class="quote_show_support_count"><%= @quote.oppose_count %> opposing</p>
+    <p class="quote_show_support_count" id="bottom"><%= @quote.oppose_count %> opposing</p>
     <p class="add_source_link"> - <%= link_to "link a quote", link_quote_path(@quote), class: "add_source_link" %></p>
     <br>
     <% if current_user == @quote.user %>

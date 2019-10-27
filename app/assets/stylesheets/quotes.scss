@@ -109,8 +109,20 @@ form.vote input {
 }
 div.quote_show p.quote_show_support_count {
     float: left;
-    margin: -0.8em 0 0 20%;
+    margin: -1.2em 0 0 20%;
     padding: 4px;
+}
+div.quote_show p.quote_show_support_count#top {
+    float: left;
+    margin: -0.5em 0 0 20%;
+    padding: 4px;
+    font-size: 0.9em;
+}
+div.quote_show p.quote_show_support_count#bottom {
+    float: left;
+    margin: -1em 0 0 20%;
+    padding: 4px;
+    font-size: 0.9em;
 }
 p#quote_user {
     font-style: italic;
