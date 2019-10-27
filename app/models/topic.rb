@@ -10,6 +10,14 @@ class Topic < ApplicationRecord
         message: "of topic must be between 1 and 40 characters" }
     
     def last_3_quotes
-        self.quotes.most_recent.limit(3).to_a
+        lowest_rated = self.quotes.sort_by { |quote| quote.rating }
+        highest_rated = lowest_rated.reverse
+        least_recent = highest_rated.sort_by { |quote| quote.created_at }
+        least_recent.reverse
+    end
+
+
+    def topic_last_3_quotes(user)
+        last_3_quotes.select { |quote| quote.user == user }
     end
 end

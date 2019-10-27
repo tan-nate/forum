@@ -48,8 +48,4 @@ class Quote < ApplicationRecord
         end
         shortened_url.match(/(?<=\.)(.*?)(?=\.)/)[0]
     end
-
-    def order_by_rating
-        sort_by { |quote| quote.rating }
-    end
 end

@@ -16,7 +16,7 @@ class TopicsController < ApplicationController
 
     def show
         @topic = Topic.find(params[:id])
-        @quotes = @topic.quotes.most_recent.order_by_rating
+        @quotes = @topic.last_3_quotes
     end
 
     def follow
