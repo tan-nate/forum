@@ -28,6 +28,10 @@ class UsersController < ApplicationController
             @users = User.most_quotes
     end
 
+    def show
+        @user = User.find(params[:id])
+    end
+
     def clipboard
         user = User.find(params[:id])
         @clipboard = user.clipboard

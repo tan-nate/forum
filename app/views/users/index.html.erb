@@ -2,7 +2,7 @@
     <h3 id="following_header">following:</h3>
     <% @followees.each do |followee| %>
         <div class="centered_clipboard_title_place">
-            <h2 class="clipboard_title"><%= followee.username %></h2>
+            <h2 class="clipboard_title"><%= link_to followee.username, user_path(followee) %></h2>
             <% if logged_in? %>
                 <% if !current_user.followees.include?(followee) %>
                     <%= form_with url: follow_user_path(followee), class: "follow" do %>
@@ -46,7 +46,7 @@
 <% end %>
 <% @users.each do |user| %>
     <div class="centered_clipboard_title_place">
-        <h2 class="clipboard_title"><%= user.username %></h2>
+        <h2 class="clipboard_title"><%= link_to user.username, user_path(user) %></h2>
         <% if logged_in? %>
             <% if !current_user.followees.include?(user) %>
                 <%= form_with url: follow_user_path(user), class: "follow" do %>

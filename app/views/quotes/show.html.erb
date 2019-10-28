@@ -3,6 +3,8 @@
         <p><%= flash[:alert] %></p>
     </div>
 <% end %>
+<br>
+<h2 class="place_title"><%= link_to @quote.topic.name, topic_path(@quote.topic) %> (<%= @quote.topic.place.name %>)</h2>
 <div class="quote_show">
     <h3 class="quote_text"><%= @quote.text %></h3>
     <p class="quote_show_support_count" id="quote_user">- <%= link_to @quote.user.username, user_path(@quote.user) %></p>
