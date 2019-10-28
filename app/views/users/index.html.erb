@@ -1,5 +1,5 @@
 <% if logged_in? && !@followees.empty? %>
-    <h2 id="following_header">following:</h2>
+    <h3 id="following_header">following:</h3>
     <% @followees.each do |followee| %>
         <div class="centered_clipboard_title_place">
             <h2 class="clipboard_title"><%= followee.username %></h2>
@@ -38,11 +38,11 @@
             </div>
         <% end %>
     <% end %>
-    <h2 id="following_header">all users:</h2>
+    <h3 id="following_header">all users:</h3>
 <% elsif logged_in? && @followees.empty? %>
     <h3 id="not_following_users"> you are not following any users </h3>
     <div class="topics_index_top_pane"></div>
-    <h2 id="following_header">all users:</h2>
+    <h3 id="following_header">all users:</h3>
 <% end %>
 <% @users.each do |user| %>
     <div class="centered_clipboard_title_place">
