@@ -16,6 +16,13 @@ class Topic < ApplicationRecord
         least_recent.reverse
     end
 
+    def last_3_quotes_limit
+        lowest_rated = self.quotes.sort_by { |quote| quote.rating }
+        highest_rated = lowest_rated.reverse
+        least_recent = highest_rated.sort_by { |quote| quote.created_at }
+        least_recent.reverse.take(3)
+    end
+
 
     def topic_last_3_quotes(user)
         last_3_quotes.select { |quote| quote.user == user }

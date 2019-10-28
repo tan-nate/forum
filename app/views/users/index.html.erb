@@ -30,7 +30,7 @@
                         <p class="support_count">opposing: <%= quote.oppose_count %></p>
                     </div>
                 <% end %>
-                <% if topic.quotes.length > 3 %>
+                <% if followee.quotes.length > 3 %>
                     <div class="break_column"></div>
                     <%= link_to "see more...", topic_path(topic), class: "see_more" %>
                 <% end %>
@@ -74,7 +74,7 @@
                     <p class="support_count">opposing: <%= quote.oppose_count %></p>
                 </div>
             <% end %>
-            <% if topic.quotes.length > 3 %>
+            <% if user.quotes.length > 3 %>
                 <div class="break_column"></div>
                 <%= link_to "see more...", topic_path(topic), class: "see_more" %>
             <% end %>
