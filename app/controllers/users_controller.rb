@@ -23,10 +23,9 @@ class UsersController < ApplicationController
 
     def index
         if logged_in?
-            @users = current_user.followees.push(User.most_quotes)
-        else
-            @users = User.most_quotes
+            @followees = current_user.followees
         end
+            @users = User.most_quotes
     end
 
     def clipboard
@@ -39,6 +38,18 @@ class UsersController < ApplicationController
         @clipboard = user.clipboard
         @clipboard.quotes.clear
         redirect_to clipboard_path(user)
+    end
+
+    def follow
+        user = User.find(params[:id])
+        current_user.followees << user
+        redirect_to users_path
+    end
+
+    def unfollow
+        user = User.find(params[:id])
+        current_user.followees.delete(user)
+        redirect_to users_path
     end
 
     private

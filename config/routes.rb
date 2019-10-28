@@ -21,6 +21,9 @@ Rails.application.routes.draw do
   post '/topics/:id/follow', to: 'topics#follow', as: 'follow_topic'
   post '/topics/:id/unfollow', to: 'topics#unfollow', as: 'unfollow_topic'
 
+  post '/users/:id/follow', to: 'users#follow', as: 'follow_user'
+  post '/users/:id/unfollow', to: 'users#unfollow', as: 'unfollow_user'
+
   get '/users/:id/clipboard', to: 'users#clipboard', as: 'clipboard'
   delete '/users/:id/clipboard', to: 'users#clear_clipboard', as: 'clear_clipboard'
 
