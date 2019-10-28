@@ -12,7 +12,7 @@ class PlacesController < ApplicationController
     def follow
         @place = Place.find(params[:id])
         current_user.places << @place
-        redirect_to place_path(@place)
+        redirect_to places_path
     end
 
     def unfollow

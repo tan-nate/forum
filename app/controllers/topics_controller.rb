@@ -22,7 +22,7 @@ class TopicsController < ApplicationController
     def follow
         @topic = Topic.find(params[:id])
         current_user.topics << @topic
-        redirect_to topic_path(@topic)
+        redirect_to topics_path
     end
 
     def unfollow
