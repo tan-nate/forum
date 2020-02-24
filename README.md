@@ -1,3 +1,3 @@
 # README
 
-forum is an app that lets you browse and link together snippets from news articles across the web. To start the app, fork and clone this repo. Then run 'bundle install' and 'rails s'. Finally, visit localhost:3000 to start the app. 
+forum lets you browse and connect snippets of news from across the web. To start the app, fork and clone this repo. Then run 'bundle install' and 'rails s'. Finally, visit localhost:3000 to start the app. Any and all improvements and suggestions are greatly welcome and needed.
